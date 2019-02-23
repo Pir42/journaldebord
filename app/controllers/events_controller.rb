@@ -4,7 +4,14 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Array.new
+
+    Event.find_each do |event|
+      if event.user == current_user
+        @events.push(event)
+      end      
+    end
+
   end
 
   # GET /events/1
