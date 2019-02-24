@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <header class="navbar shadow-sm">
+      <div class="container d-flex justify-content-between">
+        <p class="navbar-brand d-flex align-items-center">Le journal de bord</p>
+        <%= link_to 'Déconnexion', destroy_user_session_path, method: 'delete', class: 'text-danger' %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
