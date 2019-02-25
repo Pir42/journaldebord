@@ -1,34 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="index">
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Variety:</strong>
-  <%= @event.variety %>
-</p>
+  <div class="row">
 
-<p>
-  <strong>Parcel:</strong>
-  <%= @event.parcel %>
-</p>
+    <div class="col-sm-6">
+      <p>
+        <p class="font-weight-bold mt-3 h5">Date:</p>
+        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @event.date %></p>
+      </p>
 
-<p>
-  <strong>Action:</strong>
-  <%= @event.action %>
-</p>
+      <p>
+        <p class="font-weight-bold mt-3 h5">Variété:</p>
+        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @event.variety %></p>
+      </p>
 
-<p>
-  <strong>Details:</strong>
-  <%= @event.details %>
-</p>
+      <p>
+        <p class="font-weight-bold mt-3 h5">Parcelle:</p>
+        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @event.parcel %></p>
+      </p>
+    </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @event.user %>
-</p>
+    <div class="col-sm-6">
+      <p>
+        <p class="font-weight-bold mt-3 h5">Action:</p>
+        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @event.action %></p>
+      </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+      <p>
+        <p class="font-weight-bold mt-3 h5">Commentaires:</p>
+        <% if @event.details != '' %>
+          <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @event.details %></p>
+        <% else %>
+          <p class="bd-callout bd-callout-primary p-3 shadow-sm">Aucun commentaire</p>
+        <% end %>
+
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="mt-4">
+    <p><%= link_to 'Modifier', edit_event_path(@event), class: 'btn btn-outline-secondary mb-4' %></p>
+    <%= link_to 'Retour', events_path %>
+  </div>
+
+</div>
