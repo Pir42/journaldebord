@@ -11,32 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :date %>
+      <%= form.date_select :date, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :variety %>
-    <%= form.text_field :variety %>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :variety, value: 'Variété' %>
+      <%= form.text_field :variety, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :parcel %>
-    <%= form.text_field :parcel %>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :parcel, value: 'Parcelles' %>
+      <%= form.text_field :parcel, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :action %>
-    <%= form.text_field :action %>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :action %>
+      <%= form.text_field :action, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :details %>
-    <%= form.text_area :details %>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :details, value: 'Commentaire' %>
+      <%= form.text_area :details, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+
+  <div class="form-group">
+    <div class="actions">
+      <%= form.submit 'Créer', class: 'btn btn-primary' %>
+    </div>
   </div>
+
 <% end %>
