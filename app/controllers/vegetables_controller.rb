@@ -4,13 +4,7 @@ class VegetablesController < ApplicationController
   # GET /vegetables
   # GET /vegetables.json
   def index
-    @vegetables = Array.new
-
-    Vegetable.find_each do |vegetable|
-      if vegetable.user == current_user
-        @vegetables.push(vegetable)
-      end      
-    end
+    @vegetables = Vegetable.where(user: current_user)
   end
 
   # GET /vegetables/1

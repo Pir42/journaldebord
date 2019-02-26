@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :varieties
   resources :vegetables
   resources :events
   devise_for :users
