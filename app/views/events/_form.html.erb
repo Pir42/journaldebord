@@ -21,8 +21,8 @@
 
   <div class="form-group">
     <div class="field">
-      <%= form.label :variety, value: 'Variété' %>
-      <%= form.text_field :variety, class: 'form-control' %>
+      <%= form.label :variety_id, value: 'Variété' %>
+      <%= form.collection_select(:variety_id, Variety.where(user: current_user), :id, :name)%>
     </div>
   </div>
 

@@ -20,7 +20,7 @@
       <% @events.each do |event| %>
         <tr>
           <th scope="row"><%= event.date %></th>
-          <td><%= event.variety %></td>
+          <td><%= Variety.find(event.variety_id).name %></td>
           <td><%= event.parcel %></td>
           <td><%= event.action %></td>
           <td><%= event.details %></td>

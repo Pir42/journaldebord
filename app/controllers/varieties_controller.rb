@@ -4,7 +4,7 @@ class VarietiesController < ApplicationController
   # GET /varieties
   # GET /varieties.json
   def index
-    @varieties = Variety.all
+    @varieties = Variety.where(user: current_user)
   end
 
   # GET /varieties/1
