@@ -1,28 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Vegetables</h1>
+<div class="index">
+  <h1>Mes légumes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @vegetables.each do |vegetable| %>
+  <table class="table table-stripped table-hover table-responsive"">
+    <thead>
       <tr>
-        <td><%= vegetable.name %></td>
-        <td><%= link_to 'Show', vegetable %></td>
-        <td><%= link_to 'Edit', edit_vegetable_path(vegetable) %></td>
-        <td><%= link_to 'Destroy', vegetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">Nom</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @vegetables.each do |vegetable| %>
+        <tr>
+          <td><%= vegetable.name %></td>
+          <td><%= link_to 'Voir', vegetable %></td>
+          <td><%= link_to 'Modifier', edit_vegetable_path(vegetable) %></td>
+          <td><%= link_to 'Supprimer', vegetable, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Vegetable', new_vegetable_path %>
+  <br>
+
+  <%= link_to 'Ajouter un légume', new_vegetable_path, class: 'btn btn-primary' %>
+</div>

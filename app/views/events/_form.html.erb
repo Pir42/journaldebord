@@ -22,7 +22,7 @@
   <div class="form-group">
     <div class="field">
       <%= form.label :variety_id, value: 'Variété' %>
-      <%= form.collection_select(:variety_id, Variety.where(user: current_user), :id, :name)%>
+      <%= form.collection_select(:variety_id, Variety.where(user: current_user), :id, :name, {class: "form-control"})%>
     </div>
   </div>
 
@@ -53,7 +53,11 @@
 
   <div class="form-group">
     <div class="actions">
-      <%= form.submit 'Créer', class: 'btn btn-primary' %>
+      <% if current_page? new_event_path %>
+        <%= form.submit 'Créer', class: 'btn btn-primary' %>
+      <% elsif current_page? edit_event_path %>
+        <%= form.submit 'Modifier', class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 

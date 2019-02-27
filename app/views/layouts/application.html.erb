@@ -11,10 +11,30 @@
   </head>
 
   <body>
-    <header class="navbar shadow-sm">
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
         <p class="navbar-brand">Le journal de bord</p>
         <% if user_signed_in? %>
-          <%= link_to 'Déconnexion', destroy_user_session_path, method: 'delete', class: 'nav-item text-danger' %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <%= link_to 'Suivi de mes cultures', events_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Mes légumes',vegetables_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Mes variétés',varieties_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Déconnexion', destroy_user_session_path, method: 'delete', class: 'nav-link text-danger' %>
+              </li>
+            </ul>
+          </div>
+          
         <% end %>
     </header>
     <%= yield %>

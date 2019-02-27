@@ -1,6 +1,10 @@
-<h1>Editing Vegetable</h1>
+<div class="index">
 
-<%= render 'form', vegetable: @vegetable %>
+    <h1>Modifier un légume</h1>
 
-<%= link_to 'Show', @vegetable %> |
-<%= link_to 'Back', vegetables_path %>
+    <%= render 'form', vegetable: @vegetable %>
+
+    <%= link_to 'Voir', @vegetable %> |
+    <%= link_to 'Retour', vegetables_path %>
+
+</div>
