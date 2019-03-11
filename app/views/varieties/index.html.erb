@@ -17,13 +17,13 @@
   <tbody>
     <% @varieties.each do |variety| %>
       <tr>
-      
+
         <td><%= variety.name %></td>
         <td><%= variety.vegetable %></td>
         <td><%= variety.user %></td>
-        <td><%= link_to 'Show', variety %></td>
-        <td><%= link_to 'Edit', edit_variety_path(variety) %></td>
-        <td><%= link_to 'Destroy', variety, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger'%></td>
+        <td><%= link_to 'Voir', variety %></td>
+        <td><%= link_to 'Modifier', edit_variety_path(variety) %></td>
+        <td><%= link_to 'Supprimer', variety, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger'%></td>
       </tr>
     <% end %>
   </tbody>
