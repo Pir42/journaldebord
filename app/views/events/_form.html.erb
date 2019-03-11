@@ -20,18 +20,32 @@
 
 
   <div class="form-group">
+    <% if Variety.where(user: current_user) != [] %>
     <div class="field">
       <%= form.label :variety_id, value: 'Variété' %>
       <%= form.collection_select(:variety_id, Variety.where(user: current_user), :id, :name, {class: "form-control"})%>
     </div>
+    <% else %>
+    <div>
+      <%= link_to 'Ajouter une variété', new_variety_path, class: 'btn btn-primary' %>
+    </div>
+    <% end %>
+
   </div>
 
 
   <div class="form-group">
+    <% if Parcel.where(user: current_user) != [] %>
     <div class="field">
       <%= form.label :parcel_id, value: 'Parcelle' %>
       <%= form.collection_select(:parcel_id, Parcel.where(user: current_user), :id, :idPlace, {class: "form-control"})%>
     </div>
+    <% else %>
+    <div>
+      <%= link_to 'Ajouter une parcelle', new_parcel_path, class: 'btn btn-primary' %>
+    </div>
+    <% end %>
+
   </div>
 
 
@@ -52,10 +66,13 @@
 
 
   <div class="form-group">
+    <% if (Parcel.where(user: current_user) != []) && (Variety.where(user: current_user) != [])  %>
     <div class="actions">
         <%= form.submit 'Créer', class: 'btn btn-primary' %>
         <%= form.submit 'Modifier', class: 'btn btn-primary' %>
     </div>
-  </div>
+    <% else %>
+
+    <% end %>
 
 <% end %>
