@@ -74,8 +74,11 @@
   <div class="form-group">
     <% if (Parcel.where(user: current_user) != []) && (Variety.where(user: current_user) != []) && (ActionType.where(user: current_user) != [])  %>
     <div class="actions">
+        <% if current_page? new_event_path %>
         <%= form.submit 'Créer', class: 'btn btn-primary' %>
+        <% else %>
         <%= form.submit 'Modifier', class: 'btn btn-primary' %>
+        <% end %>
     </div>
     <% else %>
 

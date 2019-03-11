@@ -18,7 +18,9 @@
         <td><%= action_type.name %></td>
         <td><%= link_to 'Voir', action_type %></td>
         <td><%= link_to 'Modifier', edit_action_type_path(action_type) %></td>
+        <% if Event.where(action_type_id: action_type.id).empty? %>
         <td><%= link_to 'Supprimer', action_type, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger' %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -17,7 +17,9 @@
           <td><%= vegetable.name %></td>
           <td><%= link_to 'Voir', vegetable %></td>
           <td><%= link_to 'Modifier', edit_vegetable_path(vegetable) %></td>
+          <% if Vegetable.where(id: vegetable.id).empty? %>
           <td><%= link_to 'Supprimer', vegetable, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger' %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

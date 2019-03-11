@@ -20,7 +20,9 @@
         <td><%= parcel.name %></td>
         <td><%= link_to 'Voir', parcel %></td>
         <td><%= link_to 'Modifier', edit_parcel_path(parcel) %></td>
+        <% if Event.where(parcel_id: parcel.id).empty? %>
         <td><%= link_to 'Supprimer', parcel, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger' %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
