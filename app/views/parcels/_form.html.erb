@@ -11,17 +11,25 @@
     </div>
   <% end %>
 
+<div class="form-group">
   <div class="field">
-    <%= form.label :idPlace %>
-    <%= form.text_field :idPlace %>
+    <%= form.label :idPlace, value: 'ID du lieu' %>
+    <%= form.text_field :idPlace, class: 'form-control' %>
   </div>
+</div>
 
+<div class="form-group">
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, value: 'Nom' %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
+ <div class="actions mb-3">
+    <% if current_page? new_parcel_path %>
+      <%= form.submit 'Ajouter une parcelle', class: 'btn btn-primary' %>
+    <% elsif current_page? edit_parcel_path %>
+      <%= form.submit 'Modifier', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 <% end %>
