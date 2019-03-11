@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @variety.name %>
-</p>
+<div class="index">
+  <p>
+    <p class="font-weight-bold mt-3 h5">Nom :</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @variety.name %></p>
+  </p>
 
-<p>
-  <strong>Vegetable:</strong>
-  <%= @variety.vegetable %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @variety.user %>
-</p>
-
-<%= link_to 'Edit', edit_variety_path(@variety) %> |
-<%= link_to 'Back', varieties_path %>
+  <div class="mt-4">
+    <%= link_to 'Modifier', edit_variety_path(@variety), class: 'btn btn-outline-secondary mb-4' %>
+    <br>
+    <%= link_to 'Retour', varieties_path %>
+  </div>
+</div>
