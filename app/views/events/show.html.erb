@@ -12,7 +12,7 @@
 
       <p>
         <p class="font-weight-bold mt-3 h5">Parcelle:</p>
-        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @event.parcel %></p>
+        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= Parcel.find(@event.parcel_id).idPlace %></p>
       </p>
 
       <p>

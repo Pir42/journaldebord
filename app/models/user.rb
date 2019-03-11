@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :events
   has_many :vegetables
+  has_many :parcels
 end
