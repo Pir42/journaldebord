@@ -2,6 +2,7 @@ class VarietiesController < ApplicationController
   before_action :set_variety, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
+
   # GET /varieties
   # GET /varieties.json
   def index
