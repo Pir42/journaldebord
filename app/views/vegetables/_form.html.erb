@@ -19,7 +19,10 @@
   </div>
 
   <div class="actions mb-3">
-      <%= form.submit 'Ajouter un légume', class: 'btn btn-primary' %>
-      <%= form.submit 'Modifier', class: 'btn btn-primary' %>
+      <% if current_page? new_vegetable_path%>
+        <%= form.submit 'Ajouter un légume', class: 'btn btn-primary' %>
+      <% else %>
+        <%= form.submit 'Modifier', class: 'btn btn-primary' %>
+      <% end %>
   </div>
 <% end %>
