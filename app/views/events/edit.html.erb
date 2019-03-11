@@ -1,10 +1,15 @@
-<div class="index">
+	<div class="index">
 
-    <h1>Modifier un suivi</h1>
+		<h1>Modifier un suivi</h1>
 
-    <%= render 'form', event: @event %>
+		<%= render 'form', event: @event %>
 
-    <%= link_to 'Voir', @event %> |
-    <%= link_to 'Retour', events_path %>
+		<div class="mt-4">
 
-</div>
+		  <%= link_to 'Voir', @event %> %>
+
+		<br>
+		<%= link_to 'Retour', events_path %>
+		</div>
+
+	</div>

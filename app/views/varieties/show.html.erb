@@ -7,9 +7,9 @@
   </p>
 
   <div class="mt-4">
-    <% if can? :update, @variety%>
-      <%= link_to 'Modifier', edit_variety_path(@variety), class: 'btn btn-outline-secondary mb-4' %> |
-    <% end %>
+
+    <%= link_to 'Modifier', edit_variety_path(@variety), class: 'btn btn-outline-secondary mb-4' %>
+
     <br>
     <%= link_to 'Retour', varieties_path %>
   </div>
