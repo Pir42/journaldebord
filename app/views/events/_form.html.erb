@@ -29,8 +29,8 @@
 
   <div class="form-group">
     <div class="field">
-      <%= form.label :parcel, value: 'Parcelles' %>
-      <%= form.text_field :parcel, class: 'form-control' %>
+      <%= form.label :parcel_id, value: 'Parcelle' %>
+      <%= form.collection_select(:parcel_id, Parcel.where(user: current_user), :id, :idPlace, {class: "form-control"})%>
     </div>
   </div>
 
