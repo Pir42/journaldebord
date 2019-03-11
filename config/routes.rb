@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :parcels
   resources :varieties
   resources :vegetables
   resources :events

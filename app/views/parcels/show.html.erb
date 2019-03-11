@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idplace:</strong>
+  <%= @parcel.idPlace %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @parcel.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @parcel.user %>
+</p>
+
+<%= link_to 'Edit', edit_parcel_path(@parcel) %> |
+<%= link_to 'Back', parcels_path %>
