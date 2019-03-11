@@ -12,6 +12,7 @@
   <% end %>
 
   <div class="form-group">
+      <% if Vegetable.where(user: current_user) != [] %>
     <div class="field">
       <%= form.label :name, value: 'Nom' %>
       <%= form.text_field :name, class: 'form-control' %>
@@ -20,13 +21,22 @@
       <%= form.label :vegetable_id, value: 'Légume' %>
       <%= form.collection_select(:vegetable_id, Vegetable.where(user: current_user), :id, :name, {class: "form-control"}) %>
     </div>
+      <% else %>
+    <div>
+      <%= link_to 'Ajouter un légume', new_vegetable_path, class: 'btn btn-primary' %>
+      <% end %>
   </div>
-
-  <div class="actions mb-3">
-    <% if current_page? new_variety_path %>
-      <%= form.submit 'Ajouter une variété', class: 'btn btn-primary' %>
+  <div>
+    <% if Vegetable.where(user: current_user) != [] %>
+    <div class="actions mb-3">
+      <% if current_page? new_variety_path %>
+        <%= form.submit 'Ajouter une variété', class: 'btn btn-primary' %>
+      <% else %>
+        <%= form.submit 'Modifier', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
     <% else %>
-      <%= form.submit 'Modifier', class: 'btn btn-primary' %>
-    <% end %>
+
   </div>
+  <% end %>
 <% end %>
