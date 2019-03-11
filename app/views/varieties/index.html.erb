@@ -9,7 +9,6 @@
     <tr>
       <th scope="col">Nom</th>
       <th scope="col">Légume</th>
-      <th scope="col">Utilisateur</th>
       <th scope="col" colspan="3"></th>
     </tr>
   </thead>
@@ -19,8 +18,7 @@
       <tr>
 
         <td><%= variety.name %></td>
-        <td><%= variety.vegetable %></td>
-        <td><%= variety.user %></td>
+        <td><%= variety.vegetable.name %></td>
         <td><%= link_to 'Voir', variety %></td>
         <td><%= link_to 'Modifier', edit_variety_path(variety) %></td>
         <td><%= link_to 'Supprimer', variety, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger'%></td>

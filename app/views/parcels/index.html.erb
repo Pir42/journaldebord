@@ -7,9 +7,8 @@
 <table class="table table-stripped table-hover table-responsive">
   <thead>
     <tr>
-      <th scope="col">Id du lieu</th>
+      <th scope="col">ID du lieu</th>
       <th scope="col">Nom</th>
-      <th scope="col">Utilisateur</th>
       <th scope="col" colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
       <tr>
         <td><%= parcel.idPlace %></td>
         <td><%= parcel.name %></td>
-        <td><%= parcel.user %></td>
         <td><%= link_to 'Voir', parcel %></td>
         <td><%= link_to 'Modifier', edit_parcel_path(parcel) %></td>
         <td><%= link_to 'Supprimer', parcel, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger' %></td>
