@@ -51,8 +51,8 @@
 
   <div class="form-group">
     <div class="field">
-      <%= form.label :action %>
-      <%= form.text_field :action, class: 'form-control' %>
+      <%= form.label :action_type_id %>
+      <%= form.collection_select(:action_type_id, ActionType.where(user: current_user), :id, :name, {class: "form-control"})%>
     </div>
   </div>
 

@@ -22,7 +22,7 @@
           <th scope="row"><%= event.date %></th>
           <td><%= Variety.find(event.variety_id).name %></td>
           <td><%= Parcel.find(event.parcel_id).idPlace %></td>
-          <td><%= event.action %></td>
+          <td><%= ActionType.find(event.action_type_id).name %></td>
           <td><%= event.details %></td>
           <td><%= link_to 'Voir', event %></td>
           <td><%= link_to 'Modifier', edit_event_path(event) %></td>
