@@ -30,7 +30,7 @@ class ParcelsController < ApplicationController
 
     respond_to do |format|
       if @parcel.save
-        format.html { redirect_to @parcel, notice: 'Parcel was successfully created.' }
+        format.html { redirect_to @parcel, notice: 'Votre parcelle a été ajoutée avec succès.' }
         format.json { render :show, status: :created, location: @parcel }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class ParcelsController < ApplicationController
   def update
     respond_to do |format|
       if @parcel.update(parcel_params)
-        format.html { redirect_to @parcel, notice: 'Parcel was successfully updated.' }
+        format.html { redirect_to @parcel, notice: 'Votre parcelle a été mise à jour.' }
         format.json { render :show, status: :ok, location: @parcel }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class ParcelsController < ApplicationController
   def destroy
     @parcel.destroy
     respond_to do |format|
-      format.html { redirect_to parcels_url, notice: 'Parcel was successfully destroyed.' }
+      format.html { redirect_to parcels_url, notice: 'Votre parcelle a été supprimée.' }
       format.json { head :no_content }
     end
   end

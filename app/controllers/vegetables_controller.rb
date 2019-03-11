@@ -31,7 +31,7 @@ class VegetablesController < ApplicationController
 
     respond_to do |format|
       if @vegetable.save
-        format.html { redirect_to @vegetable, notice: 'Vegetable was successfully created.' }
+        format.html { redirect_to @vegetable, notice: 'Votre légume a été ajouté avec succès.' }
         format.json { render :show, status: :created, location: @vegetable }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class VegetablesController < ApplicationController
   def update
     respond_to do |format|
       if @vegetable.update(vegetable_params)
-        format.html { redirect_to @vegetable, notice: 'Vegetable was successfully updated.' }
+        format.html { redirect_to @vegetable, notice: 'Votre légume a été mis à jour.' }
         format.json { render :show, status: :ok, location: @vegetable }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class VegetablesController < ApplicationController
   def destroy
     @vegetable.destroy
     respond_to do |format|
-      format.html { redirect_to vegetables_url, notice: 'Vegetable was successfully destroyed.' }
+      format.html { redirect_to vegetables_url, notice: 'Votre légume a été supprimé.' }
       format.json { head :no_content }
     end
   end

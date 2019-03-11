@@ -31,7 +31,7 @@ class ActionTypesController < ApplicationController
 
     respond_to do |format|
       if @action_type.save
-        format.html { redirect_to @action_type, notice: 'Action type was successfully created.' }
+        format.html { redirect_to @action_type, notice: 'Votre action a été ajoutée avec succès.' }
         format.json { render :show, status: :created, location: @action_type }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class ActionTypesController < ApplicationController
   def update
     respond_to do |format|
       if @action_type.update(action_type_params)
-        format.html { redirect_to @action_type, notice: 'Action type was successfully updated.' }
+        format.html { redirect_to @action_type, notice: 'Votre action a été mise à jour.' }
         format.json { render :show, status: :ok, location: @action_type }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class ActionTypesController < ApplicationController
   def destroy
     @action_type.destroy
     respond_to do |format|
-      format.html { redirect_to action_types_url, notice: 'Action type was successfully destroyed.' }
+      format.html { redirect_to action_types_url, notice: 'Votre action a été supprimée.' }
       format.json { head :no_content }
     end
   end

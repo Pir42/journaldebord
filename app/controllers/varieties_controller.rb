@@ -31,7 +31,7 @@ class VarietiesController < ApplicationController
 
     respond_to do |format|
       if @variety.save
-        format.html { redirect_to @variety, notice: 'Variety was successfully created.' }
+        format.html { redirect_to @variety, notice: 'Votre variété a été ajoutée avec succès.' }
         format.json { render :show, status: :created, location: @variety }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class VarietiesController < ApplicationController
   def update
     respond_to do |format|
       if @variety.update(variety_params)
-        format.html { redirect_to @variety, notice: 'Variety was successfully updated.' }
+        format.html { redirect_to @variety, notice: 'Votre variété a été mise à jour.' }
         format.json { render :show, status: :ok, location: @variety }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class VarietiesController < ApplicationController
   def destroy
     @variety.destroy
     respond_to do |format|
-      format.html { redirect_to varieties_url, notice: 'Variety was successfully destroyed.' }
+      format.html { redirect_to varieties_url, notice: 'Votre variété a été supprimée.' }
       format.json { head :no_content }
     end
   end
