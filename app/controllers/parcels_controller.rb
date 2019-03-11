@@ -5,7 +5,7 @@ class ParcelsController < ApplicationController
   # GET /parcels
   # GET /parcels.json
   def index
-    @parcels = Parcel.all
+    @parcels = Parcel.where(user: current_user)
   end
 
   # GET /parcels/1
