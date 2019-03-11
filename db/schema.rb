@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_094522) do
+ActiveRecord::Schema.define(version: 2019_03_11_135510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_types", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_action_types_on_user_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.date "date"
@@ -68,6 +76,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_094522) do
     t.index ["user_id"], name: "index_vegetables_on_user_id"
   end
 
+  add_foreign_key "action_types", "users"
   add_foreign_key "events", "parcels"
   add_foreign_key "events", "users"
   add_foreign_key "events", "varieties"

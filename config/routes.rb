@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :action_types
   resources :parcels
   resources :varieties
   resources :vegetables
