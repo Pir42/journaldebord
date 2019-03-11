@@ -50,10 +50,16 @@
 
 
   <div class="form-group">
+    <% if ActionType.where(user: current_user) != [] %>
     <div class="field">
       <%= form.label :action_type_id %>
       <%= form.collection_select(:action_type_id, ActionType.where(user: current_user), :id, :name, {class: "form-control"})%>
     </div>
+    <% else %>
+    <div>
+      <%= link_to 'Ajouter une action', new_action_type_path, class: 'btn btn-primary' %>
+    </div>
+    <% end %>
   </div>
 
 
@@ -66,7 +72,7 @@
 
 
   <div class="form-group">
-    <% if (Parcel.where(user: current_user) != []) && (Variety.where(user: current_user) != [])  %>
+    <% if (Parcel.where(user: current_user) != []) && (Variety.where(user: current_user) != []) && (ActionType.where(user: current_user) != [])  %>
     <div class="actions">
         <%= form.submit 'Créer', class: 'btn btn-primary' %>
         <%= form.submit 'Modifier', class: 'btn btn-primary' %>
