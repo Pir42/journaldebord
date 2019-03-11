@@ -1,5 +1,6 @@
 class ParcelsController < ApplicationController
   before_action :set_parcel, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /parcels
   # GET /parcels.json

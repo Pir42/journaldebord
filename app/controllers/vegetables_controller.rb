@@ -1,5 +1,6 @@
 class VegetablesController < ApplicationController
   before_action :set_vegetable, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /vegetables
   # GET /vegetables.json
@@ -19,6 +20,7 @@ class VegetablesController < ApplicationController
 
   # GET /vegetables/1/edit
   def edit
+    
   end
 
   # POST /vegetables
