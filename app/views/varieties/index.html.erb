@@ -17,8 +17,7 @@
   <tbody>
     <% @varieties.each do |variety| %>
       <tr>
-        <th scope="row"><%= event.date %></th>
-        <td><%= Variety.find(event.variety_id).name %></td>
+      
         <td><%= variety.name %></td>
         <td><%= variety.vegetable %></td>
         <td><%= variety.user %></td>
