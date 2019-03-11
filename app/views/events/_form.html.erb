@@ -53,11 +53,8 @@
 
   <div class="form-group">
     <div class="actions">
-      <% if current_page? new_event_path %>
         <%= form.submit 'Créer', class: 'btn btn-primary' %>
-      <% elsif current_page? edit_event_path %>
         <%= form.submit 'Modifier', class: 'btn btn-primary' %>
-      <% end %>
     </div>
   </div>
 

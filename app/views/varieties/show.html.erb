@@ -6,6 +6,11 @@
     <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @variety.name %></p>
   </p>
 
+  <p>
+    <p class="font-weight-bold mt-3 h5">Légume :</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @variety.vegetable.name %></p>
+  </p>
+
   <div class="mt-4">
 
     <%= link_to 'Modifier', edit_variety_path(@variety), class: 'btn btn-outline-secondary mb-4' %>

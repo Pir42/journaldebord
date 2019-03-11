@@ -26,10 +26,7 @@
 </div>
 
  <div class="actions mb-3">
-    <% if current_page? new_parcel_path %>
       <%= form.submit 'Ajouter une parcelle', class: 'btn btn-primary' %>
-    <% elsif current_page? edit_parcel_path %>
       <%= form.submit 'Modifier', class: 'btn btn-primary' %>
-    <% end %>
   </div>
 <% end %>
