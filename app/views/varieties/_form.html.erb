@@ -11,17 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :name, value: 'Nom' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :vegetable_id %>
-    <%= form.collection_select(:vegetable_id, Vegetable.where(user: current_user), :id, :name)%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions mb-3">
+    <% if current_page? new_variety_path %>
+      <%= form.submit 'Ajouter une variété', class: 'btn btn-primary' %>
+    <% elsif current_page? edit_variety_path %>
+      <%= form.submit 'Modifier', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 <% end %>
