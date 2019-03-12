@@ -11,6 +11,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :username, class: 'sr-only' %><br />
+    <%= f.text_field :username, placeholder: 'Nom de ferme', class: 'form-control' %>
+  </div>
+
+  <div class="field">
     <%= f.label :password, class: 'sr-only' %>
     <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Mot de passe', class: "form-control" %>
         <% if @minimum_password_length %>

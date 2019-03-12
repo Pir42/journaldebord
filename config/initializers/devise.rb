@@ -40,7 +40,6 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -149,6 +148,7 @@ Devise.setup do |config|
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
+  
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
