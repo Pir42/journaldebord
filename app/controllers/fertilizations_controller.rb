@@ -26,7 +26,7 @@ class FertilizationsController < ApplicationController
   # POST /fertilizations.json
   def create
     @fertilization = Fertilization.new(fertilization_params)
-    @event.user = current_user
+    @fertilization.user = current_user
 
     respond_to do |format|
       if @fertilization.save

@@ -1,25 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="index">
 
-<p>
-  <strong>Date:</strong>
-  <%= @fertilization.date %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Fertilizer:</strong>
-  <%= Fertilizer.find(fertilization.fertilizer_id).name %>
-</p>
+  <div class="row">
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @fertilization.quantity %>
-</p>
+    <div class="col-sm-6">
+      <p>
+        <p class="font-weight-bold mt-3 h5">Date:</p>
+        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilization.date %></p>
+      </p>
 
-<p>
-  <strong>Parcel:</strong>
-  <%= Parcel.find(fertilization.parcel_id).idPlace %>
-</p>
+      <p>
+        <p class="font-weight-bold mt-3 h5">Engrais:</p>
+        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilization.fertilizer.name %></p>
+      </p>
 
+      <p>
+        <p class="font-weight-bold mt-3 h5">Quantité:</p>
+        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilization.quantity %></p>
+      </p>
 
-<%= link_to 'Edit', edit_fertilization_path(@fertilization) %> |
-<%= link_to 'Back', fertilizations_path %>
+      <p>
+        <p class="font-weight-bold mt-3 h5">Parcel:</p>
+        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilization.parcel.idPlace %></p>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="mt-4">
+    <%= link_to 'Modifier', edit_fertilization_path(@fertilization), class: 'btn btn-outline-secondary mb-4' %>
+    <%= link_to 'Retour', fertilizations_path, class: 'btn btn-outline-secondary mb-4' %>
+  </div>
+
+</div>
