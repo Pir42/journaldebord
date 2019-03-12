@@ -1,9 +1,5 @@
-<div class="index">
+<h1>New Fertilizer</h1>
 
-    <h1>Nouvel engrais</h1>
+<%= render 'form', fertilizer: @fertilizer %>
 
-    <%= render 'form', fertilizer: @fertilizer %>
-
-    <%= link_to 'Retour', fertilizers_path %>
-
-</div>
+<%= link_to 'Back', fertilizers_path %>

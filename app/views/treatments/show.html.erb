@@ -1,39 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @treatment.date %>
-</p>
+<div class="index">
 
-<p>
-  <strong>Variety:</strong>
-  <%= @treatment.variety %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Date:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @treatment.date %>
+  </p>
 
-<p>
-  <strong>Details:</strong>
-  <%= @treatment.details %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Variété:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @treatment.variety %>
+  </p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @treatment.quantity %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Détails:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @treatment.details %>
+  </p>
 
-<p>
-  <strong>Unit:</strong>
-  <%= @treatment.unit %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Quantité:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @treatment.quantity %>
+  </p>
 
-<p>
-  <strong>Parcel:</strong>
-  <%= @treatment.parcel %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Unité:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @treatment.unit %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @treatment.user %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Parcelle:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @treatment.parcel %>
+  </p>
 
-<%= link_to 'Edit', edit_treatment_path(@treatment) %> |
-<%= link_to 'Back', treatments_path %>
+  <div class="mt-4">
+    <% if can? :update, @variety%>
+    <%= link_to 'Modifier', edit_treatment_path(@treatment), class: 'btn btn-outline-secondary mb-4' %> |
+    <% end %>
+    <br>
+    <%= link_to 'Retour', treatments_path %>
+  </div>
+</div>

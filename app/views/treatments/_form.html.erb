@@ -11,37 +11,43 @@
     </div>
   <% end %>
 
+<div class="form-group">
   <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+    <%= form.label :date, value: 'Date' %>
+    <%= form.date_select :date, class: 'form-control' %>
+  </div>
+</div>
+
+  <div class="field">
+    <%= form.label :variety_id, value: 'Variété' %>
+    <%= form.collection_select(:variety_id, Variety.where(user: current_user), :id, :name, {class: 'form-control'})%>
   </div>
 
   <div class="field">
-    <%= form.label :variety_id %>
-    <%= form.collection_select(:variety_id, Variety.where(user: current_user), :id, :name) %>
+    <%= form.label :details, value: 'Détails' %>
+    <%= form.text_area :details, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :details %>
-    <%= form.text_area :details %>
+    <%= form.label :quantity, value: 'Quantité' %>
+    <%= form.text_field :quantity, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :quantity %>
-    <%= form.text_field :quantity %>
+    <%= form.label :unit, value: 'Unité' %>
+    <%= form.text_field :unit, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :unit %>
-    <%= form.text_field :unit %>
+    <%= form.label :parcel_id, value: 'Parcelle'%>
+    <%= form.collection_select(:parcel_id, Parcel.where(user: current_user), :id, :idPlace, {class: 'form-control'}) %>
   </div>
 
-  <div class="field">
-    <%= form.label :parcel_id %>
-    <%= form.collection_select(:parcel_id, Parcel.where(user: current_user), :id, :idPlace) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+   <div class="actions mb-3">
+    <% if current_page? new_treatment_path %>
+      <%= form.submit 'Ajouter un traitement', class: 'btn btn-primary' %>
+    <% else %>
+      <%= form.submit 'Modifier', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 <% end %>
