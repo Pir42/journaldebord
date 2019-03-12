@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @treatment.date %>
+</p>
+
+<p>
+  <strong>Variety:</strong>
+  <%= @treatment.variety %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @treatment.details %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @treatment.quantity %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @treatment.unit %>
+</p>
+
+<p>
+  <strong>Parcel:</strong>
+  <%= @treatment.parcel %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @treatment.user %>
+</p>
+
+<%= link_to 'Edit', edit_treatment_path(@treatment) %> |
+<%= link_to 'Back', treatments_path %>

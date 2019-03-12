@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2019-03-12
+  variety: one
+  details: MyText
+  quantity: 1.5
+  unit: MyString
+  parcel: one
+  user: one
+
+two:
+  date: 2019-03-12
+  variety: two
+  details: MyText
+  quantity: 1.5
+  unit: MyString
+  parcel: two
+  user: two
