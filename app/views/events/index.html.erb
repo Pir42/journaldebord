@@ -12,6 +12,8 @@
         <th scope="col">Parcelle</th>
         <th scope="col">Action</th>
         <th scope="col">Détails</th>
+        <th scope="col">Quantité</th>
+        <th scope="col">Unité</th>
         <th scope="col" colspan="3"></th>
       </tr>
     </thead>
@@ -24,6 +26,8 @@
           <td><%= Parcel.find(event.parcel_id).idPlace %></td>
           <td><%= ActionType.find(event.action_type_id).name %></td>
           <td><%= event.details %></td>
+          <td><%= event.quantity%></td>
+          <td><%= event.unit %></td>
           <td><%= link_to 'Voir', event %></td>
           <td><%= link_to 'Modifier', edit_event_path(event) %></td>
           <td><%= link_to 'Supprimer', event, method: :delete, data: { confirm: 'Etes-vous sûrs ?' }, class: 'text-danger' %></t>

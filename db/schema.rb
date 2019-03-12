@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_094912) do
+ActiveRecord::Schema.define(version: 2019_03_12_104255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2019_03_12_094912) do
     t.bigint "variety_id"
     t.bigint "parcel_id"
     t.bigint "action_type_id"
+    t.integer "quantity"
+    t.string "unit"
     t.index ["action_type_id"], name: "index_events_on_action_type_id"
     t.index ["parcel_id"], name: "index_events_on_parcel_id"
     t.index ["user_id"], name: "index_events_on_user_id"

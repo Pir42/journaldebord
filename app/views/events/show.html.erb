@@ -28,6 +28,11 @@
       </p>
 
       <p>
+        <p class="font-weight-bold mt-3 h5">Quantité :</p>
+        <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @event.quantity %> <%= @event.unit%></p>
+      </p>
+
+      <p>
         <p class="font-weight-bold mt-3 h5">Commentaires:</p>
         <% if @event.details != '' %>
           <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @event.details %></p>

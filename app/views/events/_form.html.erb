@@ -69,6 +69,19 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :quantity, value: 'Quantité' %>
+      <%= form.number_field :quantity, class: 'form-control' %>
+    </div>
+  </div>
+
+    <div class="form-group">
+    <div class="field">
+      <%= form.label :unit, value: 'Unité' %>
+      <%= form.text_field :unit, class: 'form-control' %>
+    </div>
+  </div>
 
   <div class="form-group">
     <% if (Parcel.where(user: current_user) != []) && (Variety.where(user: current_user) != []) && (ActionType.where(user: current_user) != [])  %>
