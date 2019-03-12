@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nitrogen: 1
+  phosphorus: 1
+  potassium: 1
+  supplier: MyString
+  details: MyText
+  user: one
+
+two:
+  name: MyString
+  nitrogen: 1
+  phosphorus: 1
+  potassium: 1
+  supplier: MyString
+  details: MyText
+  user: two

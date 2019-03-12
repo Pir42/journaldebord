@@ -16,6 +16,7 @@ class Ability
       can :manage, Parcel, user_id: user.id
       can :manage, Event, user_id: user.id
       can :manage, ActionType, user_id: user.id
+      can :manage, Fertilizer, user_id: user.id
     end
     #
     # The first argument to `can` is the action you are giving the user

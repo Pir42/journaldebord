@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fertilizer.name %>
+</p>
+
+<p>
+  <strong>Nitrogen:</strong>
+  <%= @fertilizer.nitrogen %>
+</p>
+
+<p>
+  <strong>Phosphorus:</strong>
+  <%= @fertilizer.phosphorus %>
+</p>
+
+<p>
+  <strong>Potassium:</strong>
+  <%= @fertilizer.potassium %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @fertilizer.supplier %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @fertilizer.details %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @fertilizer.user %>
+</p>
+
+<%= link_to 'Edit', edit_fertilizer_path(@fertilizer) %> |
+<%= link_to 'Back', fertilizers_path %>

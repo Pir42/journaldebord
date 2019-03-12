@@ -1,0 +1,47 @@
+<%= form_with(model: fertilizer, local: true) do |form| %>
+  <% if fertilizer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fertilizer.errors.count, "error") %> prohibited this fertilizer from being saved:</h2>
+
+      <ul>
+      <% fertilizer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nitrogen %>
+    <%= form.number_field :nitrogen %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phosphorus %>
+    <%= form.number_field :phosphorus %>
+  </div>
+
+  <div class="field">
+    <%= form.label :potassium %>
+    <%= form.number_field :potassium %>
+  </div>
+
+  <div class="field">
+    <%= form.label :supplier %>
+    <%= form.text_field :supplier %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_area :details %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
