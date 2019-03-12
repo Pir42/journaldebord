@@ -1,39 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Fertilizers</h1>
+<div class="index">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Nitrogen</th>
-      <th>Phosphorus</th>
-      <th>Potassium</th>
-      <th>Supplier</th>
-      <th>Details</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>Types d'engrais</h1>
 
-  <tbody>
-    <% @fertilizers.each do |fertilizer| %>
+  <table class="table table-stripped table-hover table-responsive">
+    <thead>
       <tr>
-        <td><%= fertilizer.name %></td>
-        <td><%= fertilizer.nitrogen %></td>
-        <td><%= fertilizer.phosphorus %></td>
-        <td><%= fertilizer.potassium %></td>
-        <td><%= fertilizer.supplier %></td>
-        <td><%= fertilizer.details %></td>
-        <td><%= fertilizer.user %></td>
-        <td><%= link_to 'Show', fertilizer %></td>
-        <td><%= link_to 'Edit', edit_fertilizer_path(fertilizer) %></td>
-        <td><%= link_to 'Destroy', fertilizer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">Nom</th>
+        <th scope="col">Nitrogène</th>
+        <th scope="col">Phosphore</th>
+        <th scope="col">Potassium</th>
+        <th scope="col">Fournisseurs</th>
+        <th scope="col">Détails</th>
+        <th scope="col" colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @fertilizers.each do |fertilizer| %>
+        <tr>
+          <td><%= fertilizer.name %></td>
+          <td><%= fertilizer.nitrogen %></td>
+          <td><%= fertilizer.phosphorus %></td>
+          <td><%= fertilizer.potassium %></td>
+          <td><%= fertilizer.supplier %></td>
+          <td><%= fertilizer.details %></td>
+          <td><%= link_to 'Voir', fertilizer %></td>
+          <td><%= link_to 'Modifier', edit_fertilizer_path(fertilizer) %></td>
+          <td><%= link_to 'Supprimer', fertilizer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Fertilizer', new_fertilizer_path %>
+  <br>
+
+<%= link_to 'Ajouter un engrais', new_fertilizer_path, class: 'btn btn-primary' %>
+
+</div>
