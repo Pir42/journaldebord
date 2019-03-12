@@ -11,27 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :date, value: 'Date' %>
+      <%= form.date_select :date, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :fertilizer_id %>
-    <%= form.collection_select(:fertilizer_id, Fertilizer.where(user: current_user), :id, :name, {class: "form-control"})%>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :fertilizer_id, value: 'Engrais' %>
+      <%= form.collection_select(:fertilizer_id, Fertilizer.where(user: current_user), :id, :name, {class: "form-control"})%>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.text_field :quantity %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :quantity, value: 'Quantité' %>
+      <%= form.text_field :quantity, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :parcel_id %>
-    <%= form.collection_select(:parcel_id, Parcel.where(user: current_user), :id, :idPlace, {class: "form-control"})%>
-  </div>
+    <div class="field">
+      <%= form.label :parcel_id, value: 'ID du lieu' %>
+      <%= form.collection_select(:parcel_id, Parcel.where(user: current_user), :id, :idPlace, {class: "form-control"})%>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
 <% end %>

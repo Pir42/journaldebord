@@ -1,6 +1,14 @@
-<h1>Editing Fertilization</h1>
+<div class="index">
 
-<%= render 'form', fertilization: @fertilization %>
+  <h1>Modifier un suivi</h1>
 
-<%= link_to 'Show', @fertilization %> |
-<%= link_to 'Back', fertilizations_path %>
+  <%= render 'form', fertilization: @fertilization %>
+
+  <div class="mt-4">
+
+    <%= link_to 'Voir', @fertilization %> |
+
+  <br>
+  <%= link_to 'Retour', fertilizations_path %>
+  </div>
+</div>
