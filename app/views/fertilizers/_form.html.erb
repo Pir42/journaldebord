@@ -11,37 +11,53 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :name, value: 'Nom' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :nitrogen %>
-    <%= form.number_field :nitrogen %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :nitrogen, value: 'Azote' %>
+      <%= form.number_field :nitrogen, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :phosphorus %>
-    <%= form.number_field :phosphorus %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :phosphorus, value: 'Phosphore' %>
+      <%= form.number_field :phosphorus, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :potassium %>
-    <%= form.number_field :potassium %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :potassium, value: 'Potassium' %>
+      <%= form.number_field :potassium, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :supplier %>
-    <%= form.text_field :supplier %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :supplier, value: 'Fournisseur' %>
+      <%= form.text_field :supplier, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :details %>
-    <%= form.text_area :details %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :details, value: 'Détails' %>
+      <%= form.text_area :details, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+     <% if current_page? new_fertilizer_path %>
+        <%= form.submit 'Créer', class: 'btn btn-primary' %>
+        <% else %>
+        <%= form.submit 'Modifier', class: 'btn btn-primary' %>
+        <% end %>
   </div>
 <% end %>

@@ -1,39 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @fertilizer.name %>
-</p>
+<div class="index">
 
-<p>
-  <strong>Nitrogen:</strong>
-  <%= @fertilizer.nitrogen %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Nom:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.name %>
+  </p>
 
-<p>
-  <strong>Phosphorus:</strong>
-  <%= @fertilizer.phosphorus %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Azote:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.nitrogen %>
+  </p>
 
-<p>
-  <strong>Potassium:</strong>
-  <%= @fertilizer.potassium %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Phosphore:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.phosphorus %>
+  </p>
 
-<p>
-  <strong>Supplier:</strong>
-  <%= @fertilizer.supplier %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Potassium:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.potassium %>
+  </p>
 
-<p>
-  <strong>Details:</strong>
-  <%= @fertilizer.details %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @fertilizer.user %>
-</p>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Fournisseur:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.supplier %>
+  </p>
 
-<%= link_to 'Edit', edit_fertilizer_path(@fertilizer) %> |
-<%= link_to 'Back', fertilizers_path %>
+  <p>
+    <p class="font-weight-bold mt-3 h5">Details:</p>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.details %>
+  </p>
+
+<div class="mt-4">
+    <% if can? :update, @variety%>
+    <%= link_to 'Modifier', edit_fertilizer_path(@fertilizer), class: 'btn btn-outline-secondary mb-4' %> |
+    <% end %>
+    <br>
+    <%= link_to 'Retour', fertilizers_path %>
+  </div>
+</div>
