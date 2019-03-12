@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :fertilizer_id %>
-    <%= form.text_field :fertilizer_id %>
+    <%= form.collection_select(:fertilizer_id, Fertilizer.where(user: current_user), :id, :name, {class: "form-control"})%>
   </div>
 
   <div class="field">
@@ -28,12 +28,7 @@
 
   <div class="field">
     <%= form.label :parcel_id %>
-    <%= form.text_field :parcel_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.collection_select(:parcel_id, Parcel.where(user: current_user), :id, :idPlace, {class: "form-control"})%>
   </div>
 
   <div class="actions">
