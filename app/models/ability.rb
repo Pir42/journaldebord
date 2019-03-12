@@ -17,6 +17,7 @@ class Ability
       can :manage, Event, user_id: user.id
       can :manage, ActionType, user_id: user.id
       can :manage, Fertilizer, user_id: user.id
+      can :manage, Fertilization, user_id: user.id
       can :manage, Treatments, user_id: user.id
     end
     #

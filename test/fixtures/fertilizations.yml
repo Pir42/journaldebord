@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2019-03-12
+  fertilizer: one
+  quantity: 1.5
+  parcel: one
+  user: one
+
+two:
+  date: 2019-03-12
+  fertilizer: two
+  quantity: 1.5
+  parcel: two
+  user: two

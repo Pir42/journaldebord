@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @fertilization.date %>
+</p>
+
+<p>
+  <strong>Fertilizer:</strong>
+  <%= Fertilizer.find(fertilization.fertilizer_id).name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @fertilization.quantity %>
+</p>
+
+<p>
+  <strong>Parcel:</strong>
+  <%= Parcel.find(fertilization.parcel_id).idPlace %>
+</p>
+
+
+<%= link_to 'Edit', edit_fertilization_path(@fertilization) %> |
+<%= link_to 'Back', fertilizations_path %>

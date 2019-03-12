@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   resources :treatments
+  resources :fertilizations
   resources :fertilizers
   resources :action_types
   resources :parcels

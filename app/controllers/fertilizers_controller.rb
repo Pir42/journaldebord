@@ -1,5 +1,6 @@
 class FertilizersController < ApplicationController
   before_action :set_fertilizer, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /fertilizers
   # GET /fertilizers.json
