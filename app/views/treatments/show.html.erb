@@ -9,7 +9,7 @@
 
   <p>
     <p class="font-weight-bold mt-3 h5">Variété:</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @treatment.variety %>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @treatment.variety.name %>
   </p>
 
   <p>
@@ -29,7 +29,7 @@
 
   <p>
     <p class="font-weight-bold mt-3 h5">Parcelle:</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @treatment.parcel %>
+    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @treatment.parcel.idPlace %>
   </p>
 
   <div class="mt-4">

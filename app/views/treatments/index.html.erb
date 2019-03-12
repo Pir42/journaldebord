@@ -21,12 +21,11 @@
     <% @treatments.each do |treatment| %>
       <tr>
         <td><%= treatment.date %></td>
-        <td><%= treatment.variety %></td>
+        <td><%= treatment.variety.name %></td>
         <td><%= treatment.details %></td>
         <td><%= treatment.quantity %></td>
         <td><%= treatment.unit %></td>
-        <td><%= treatment.parcel %></td>
-        <td><%= treatment.user %></td>
+        <td><%= treatment.parcel.idPlace %></td>
         <td><%= link_to 'Voir', treatment %></td>
         <td><%= link_to 'Modifier', edit_treatment_path(treatment) %></td>
         <td><%= link_to 'Supprimer', treatment, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %></td>
