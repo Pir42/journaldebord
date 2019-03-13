@@ -25,16 +25,23 @@ class EventsController < ApplicationController
     if params[:variety] != nil
       @varietyid = params[:variety]
       @varietyid = @varietyid[:id]
+
       if @varietyid != ''
         @events = @events.where("variety_id = :varietyid", 
           {varietyid: @varietyid.to_i})
       end
     end
-    
-    #if params[:variety]
-    #  @events = Event.where("variety = :type_variety AND user_id = :current_user",
-    #    {type_variety: params[:variety], current_user: current_user})
-    #end
+
+    if params[:action_type] != nil
+      @actionid = params[:action_type]
+      @actionid = @actionid[:id]
+
+      if @actionid != ''
+        @events = @events.where("action_type_id = :actionid", 
+          {actionid: @actionid.to_i})
+      end
+    end
+
 
 
   end
