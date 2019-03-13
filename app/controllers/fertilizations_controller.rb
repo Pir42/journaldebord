@@ -6,6 +6,29 @@ class FertilizationsController < ApplicationController
   # GET /fertilizations.json
   def index
     @fertilizations = Fertilization.where(user: current_user)
+
+    if (params[:from] != '' && params[:to] != '') && (params[:from] != nil && params[:to] != nil)
+      @fertilizations = @fertilizations.where("date >= :start_date AND date <= :end_date",
+        {start_date: params[:from], end_date: params[:to]})
+
+    elsif params[:from] != '' && params[:to] == ''
+      @fertilizations = @fertilizations.where("date >= :start_date", 
+        {start_date: params[:from]})
+
+    elsif params[:from] == '' && params[:to] != ''
+      @fertilizations = @fertilizations.where("date <= :end_date", 
+        {end_date: params[:to]})
+    end
+
+    if params[:fertilizer] != nil
+      @fertilizerid = params[:fertilizer]
+      @fertilizerid = @fertilizerid[:id]
+      if @fertilizerid != ''
+        @fertilizations = @fertilizations.where("fertilizer_id = :fertilizerid", 
+          {fertilizerid: @fertilizerid.to_i})
+      end
+    end
+
   end
 
   # GET /fertilizations/1

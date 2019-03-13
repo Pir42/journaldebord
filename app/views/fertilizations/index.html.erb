@@ -2,6 +2,24 @@
 
 <div class="index">
 
+  <h2>Filtres</h2>
+
+    <%= form_tag(fertilizations_path, method: "get") do %>
+      <%= label_tag("Date de début :") %><br>
+      <%= date_field_tag(:from) %><br>
+
+      <%= label_tag("Date de fin :") %><br>
+      <%= date_field_tag(:to) %><br>
+
+      <%= label_tag("Engrais :") %><br>
+      <%= collection_select(:fertilizer, :id, Fertilizer.where(user: current_user), :id, :name, :include_blank => true) %><br>
+
+      <%= submit_tag("Search") %><br>
+      <button type="button" id="Init">
+        <%= link_to "Réinitialiser", fertilizations_path %>
+      </button>
+    <% end %>
+
   <h1>Suivi de la fertilisation</h1>
 
   <table class="table table-stripped table-hover table-responsive">

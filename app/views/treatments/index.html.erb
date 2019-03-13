@@ -2,6 +2,24 @@
 
 <div class="index">
 
+  <h2>Filtres</h2>
+
+    <%= form_tag(treatments_path, method: "get") do %>
+      <%= label_tag("Date de début :") %><br>
+      <%= date_field_tag(:from) %><br>
+
+      <%= label_tag("Date de fin :") %><br>
+      <%= date_field_tag(:to) %><br>
+
+      <%= label_tag("Variété :") %><br>
+      <%= collection_select(:variety, :id, Variety.where(user: current_user), :id, :name, :include_blank => true) %><br>
+
+      <%= submit_tag("Search") %><br>
+      <button type="button" id="Init">
+        <%= link_to "Réinitialiser", treatments_path %>
+      </button>
+    <% end %>
+
 <h1>Traitements</h1>
 
 <table class="table table-stripped table-hover table-responsive">

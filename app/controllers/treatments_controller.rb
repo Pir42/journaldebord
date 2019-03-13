@@ -5,6 +5,29 @@ class TreatmentsController < ApplicationController
   # GET /treatments.json
   def index
     @treatments = Treatment.where(user: current_user)
+
+    if (params[:from] != '' && params[:to] != '') && (params[:from] != nil && params[:to] != nil)
+      @treatments = @treatments.where("date >= :start_date AND date <= :end_date",
+        {start_date: params[:from], end_date: params[:to]})
+
+    elsif params[:from] != '' && params[:to] == ''
+      @treatments = @treatments.where("date >= :start_date", 
+        {start_date: params[:from]})
+
+    elsif params[:from] == '' && params[:to] != ''
+      @treatments = @treatments.where("date <= :end_date", 
+        {end_date: params[:to]})
+    end
+
+    if params[:variety] != nil
+      @varietyid = params[:variety]
+      @varietyid = @varietyid[:id]
+      if @varietyid != ''
+        @treatments = @treatments.where("variety_id = :varietyid", 
+          {varietyid: @varietyid.to_i})
+      end
+    end
+
   end
 
   # GET /treatments/1

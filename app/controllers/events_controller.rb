@@ -30,6 +30,7 @@ class EventsController < ApplicationController
           {varietyid: @varietyid.to_i})
       end
     end
+    
     #if params[:variety]
     #  @events = Event.where("variety = :type_variety AND user_id = :current_user",
     #    {type_variety: params[:variety], current_user: current_user})
