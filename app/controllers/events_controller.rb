@@ -9,9 +9,14 @@ class EventsController < ApplicationController
     @events = Event.where(user: current_user)
 
     if params[:from] && params[:to]
-      @events = Event.where("date >= :start_date AND date <= :end_date AND user_id = :current_user",
-        {start_date: params[:from], end_date: params[:to], current_user: current_user})
+      @events = @events.where("date >= :start_date AND date <= :end_date",
+        {start_date: params[:from], end_date: params[:to]})
     end
+
+    #if params[:variety]
+    #  @events = Event.where("variety = :type_variety AND user_id = :current_user",
+    #    {type_variety: params[:variety], current_user: current_user})
+    #end
 
 
   end
