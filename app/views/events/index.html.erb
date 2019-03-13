@@ -3,16 +3,17 @@
 <div class="index">
 
   <h2>Filtres</h2>
-    <form action="/" method="get">
-      Date de début : <br>
-      <input type="date" name="from" id="from"> <br>
-      Date de fin : <br>
-      <input type="date" name="to" id="to"> <br>
-      <input type="submit">
+
+    <%= form_tag("/", method: "get") do %>
+      <%= label_tag("Date de début :") %><br>
+      <%= date_field_tag(:from) %><br>
+      <%= label_tag("Date de fin :") %><br>
+      <%= date_field_tag(:to) %><br>
+      <%= submit_tag("Search") %><br>
       <button type="button" id="Init">
         <%= link_to "Init", events_path %>
       </button>
-    </form>
+    <% end %>
 
   <h1>Suivi de mes cultures</h1>
   
