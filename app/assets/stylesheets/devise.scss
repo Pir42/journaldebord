@@ -4,15 +4,15 @@ $font-roboto : 'Roboto Slab';
 $Montserrat : 'Montserrat';
 
 .background1 {
-  background: url(illuaccueil.svg) no-repeat center fixed;
+  background: url('/images/illuaccueil.svg') no-repeat center fixed;
   background-size: cover;
   height: 100vh;
+  a {
+    display: block;
+    padding-top: 650px;
+  }
 }
 
-a {
-  display: block;
-  padding-top: 650px;
-}
 
 h1{
   font-size: 57px;
