@@ -7,8 +7,10 @@
     <%= form_tag("/", method: "get") do %>
       <%= label_tag("Date de début :") %><br>
       <%= date_field_tag(:from) %><br>
+
       <%= label_tag("Date de fin :") %><br>
       <%= date_field_tag(:to) %><br>
+
       <%= submit_tag("Search") %><br>
       <button type="button" id="Init">
         <%= link_to "Init", events_path %>
@@ -17,7 +19,7 @@
 
   <h1>Suivi de mes cultures</h1>
   
-
+  <%= @temp %>
   <table class="table table-stripped table-hover table-responsive">
     <thead>
       <tr>

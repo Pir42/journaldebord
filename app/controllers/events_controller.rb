@@ -8,19 +8,19 @@ class EventsController < ApplicationController
   def index
     @events = Event.where(user: current_user)
 
-    if params[:from] != '' && params[:to] != '' 
+    if (params[:from] != '' && params[:to] != '') && (params[:from] != nil && params[:to] != nil)
       @events = @events.where("date >= :start_date AND date <= :end_date",
         {start_date: params[:from], end_date: params[:to]})
-
+      @temp = '1';
     elsif params[:from] != '' && params[:to] == ''
       @events = @events.where("date >= :start_date", 
         {start_date: params[:from]})
+      @temp = '2';
 
     elsif params[:from] == '' && params[:to] != ''
       @events = @events.where("date <= :end_date", 
         {end_date: params[:to]})
-
-
+      @temp = '3';
     end
 
     #if params[:variety]
