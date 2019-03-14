@@ -57,6 +57,7 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    breadcrumbs_on_rails (3.0.1)
     builder (3.2.3)
     byebug (11.0.0)
     cancancan (2.3.0)
@@ -221,6 +222,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap
+  breadcrumbs_on_rails
   byebug
   cancancan (~> 2.0)
   capybara (>= 2.15)

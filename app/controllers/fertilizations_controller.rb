@@ -1,6 +1,7 @@
 class FertilizationsController < ApplicationController
   before_action :set_fertilization, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
+  add_breadcrumb "Suivis de la fertilisation", :root_path
 
   # GET /fertilizations
   # GET /fertilizations.json
@@ -34,15 +35,18 @@ class FertilizationsController < ApplicationController
   # GET /fertilizations/1
   # GET /fertilizations/1.json
   def show
+    add_breadcrumb 'Consulter un suivi', fertilization_path
   end
 
   # GET /fertilizations/new
   def new
     @fertilization = Fertilization.new
+    add_breadcrumb 'Ajouter un suivi', new_fertilization_path
   end
 
   # GET /fertilizations/1/edit
   def edit
+    add_breadcrumb 'Modifier un suivi', edit_fertilization_path
   end
 
   # POST /fertilizations

@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   load_and_authorize_resource
-  
+  add_breadcrumb "Suivis de mes cultures", :root_path
   # GET /events
   # GET /events.json
   def index
@@ -23,41 +23,36 @@ class EventsController < ApplicationController
     end
 
     if params[:variety] != nil
-      @varietyid = params[:variety]
-      @varietyid = @varietyid[:id]
-
-      if @varietyid != ''
+      if params[:variety][:id] != ''
         @events = @events.where("variety_id = :varietyid", 
-          {varietyid: @varietyid.to_i})
+          {varietyid: params[:variety][:id].to_i})
       end
     end
 
     if params[:action_type] != nil
-      @actionid = params[:action_type]
-      @actionid = @actionid[:id]
-
-      if @actionid != ''
+      if params[:action_type][:id] != ''
         @events = @events.where("action_type_id = :actionid", 
-          {actionid: @actionid.to_i})
+          {actionid: params[:action_type][:id]})
       end
     end
-
-
 
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    add_breadcrumb 'Consulter un suivi', event_path
   end
 
   # GET /events/new
   def new
     @event = Event.new
+    add_breadcrumb 'Ajouter un suivi', new_event_path
   end
 
   # GET /events/1/edit
   def edit
+    add_breadcrumb 'Modifier un suivi', edit_event_path
   end
 
   # POST /events

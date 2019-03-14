@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem "breadcrumbs_on_rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'cancancan', '~> 2.0'
