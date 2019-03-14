@@ -28,6 +28,11 @@ body {
   font-family: $font-roboto;
 }
 
+#body{
+	background: url('/images/illu jardin op100.png') no-repeat center fixed;
+	background-size:cover;
+}
+
 p {
     margin: 0;
 }
@@ -80,7 +85,7 @@ h1{
 .pagination{
 
 	margin-top: 1%;
-	margin-bottom: 5%;
+	padding-bottom: 5%;
 
 	.page {
 		border-color:grey;
