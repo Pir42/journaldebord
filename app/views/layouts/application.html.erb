@@ -17,7 +17,7 @@
     <header class="navbar navbar-expand-lg navbar-light" id="background">
       <%= link_to events_path do %>
       <div id="navbar-contener">
-        <p class='navbar-brand' id="h1">Journal de bord</p>
+        <p class='navbar-brand' id="h1">JOURNAL DE BORD</p>
       <% end  %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -64,7 +64,7 @@
                 <ul class="nav navbar-nav flex-row justify-content-md-end flex-nowrap">
                     <li class="nav-item dropdown">
                       <p class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        PARAMETRES
+                        <i class="fas fa-cog" id="icon_param"></i>
                       </p>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <p class="dropdown-item"><%= link_to 'Modifier mon compte', edit_user_registration_path, class: 'nav-link text-info' %></p>
