@@ -13,10 +13,10 @@
   <body>
 
     <% if user_signed_in? %>
-    <header class="navbar navbar-expand-lg navbar-light bg-light">
-
+    <header class="navbar navbar-expand-lg navbar-light" id="background">
       <%= link_to events_path do %>
-        <p class='navbar-brand'>Le journal de bord</p>
+      <div id="navbar-contener">
+        <p class='navbar-brand' id="h1">Journal de bord</p>
       <% end  %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,8 +25,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item dropdown">
-                    <p class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Tous mes suivis
+
+                    <p class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      MES SUIVIS
+
                     </p>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <p class="dropdown-item"><%= link_to 'Suivi de mes cultures', events_path, class: 'nav-link text-success' %></p>
@@ -39,7 +41,7 @@
 
                   <li class="nav-item dropdown">
                     <p class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Ma ferme
+                      MON JARDIN
                     </p>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <p class="dropdown-item"><%= link_to 'Mes légumes',vegetables_path, class: 'nav-link' %></p>
@@ -54,17 +56,23 @@
                     </div>
                   </li>
                 </ul>
-
-                <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
-                    <li>
-                        <p><%= link_to 'Modifier mon compte', edit_user_registration_path, class: 'nav-link text-info' %></p>
-                    </li>
-                    <li>
-                        <p><%= link_to 'Déconnexion', destroy_user_session_path, method: 'delete', class: 'nav-link text-danger' %></p>
+                <p class="nav-link" href="#" id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
+                      ANNUAIRE
+                </p>
+              
+                <ul class="nav navbar-nav flex-row justify-content-md-end flex-nowrap">
+                    <li class="nav-item dropdown">
+                      <p class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PARAMETRES
+                      </p>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <p class="dropdown-item"><%= link_to 'Modifier mon compte', edit_user_registration_path, class: 'nav-link text-info' %></p>
+                      <div class="dropdown-divider"></div>
+                        <p class="dropdown-item"> <%= link_to 'Déconnexion', destroy_user_session_path, method: 'delete', class: 'nav-link text-danger' %> </p>
                       </div>
                     </li>
                  </ul>
-
+              </div>
 
           </div>
 

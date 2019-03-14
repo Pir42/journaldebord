@@ -23,8 +23,13 @@
       </button>
     <% end %>
 
-  <h1>Suivi de mes cultures</h1>
-  <%= @actionid %>
+
+  <h1>MES DERNIERES ACTIONS</h1>
+  
+  <br>
+
+  <%= link_to 'Ajouter un suivi', new_event_path, class: 'btn btn-primary', id:"button_addsuivi" %>
+
   <table class="table table-stripped table-hover table-responsive">
     <thead>
       <tr>
@@ -56,10 +61,5 @@
       <% end %>
     </tbody>
   </table>
-
-  <br>
-
-  <%= link_to 'Ajouter un suivi', new_event_path, class: 'btn btn-primary' %>
-
 </div>
 
