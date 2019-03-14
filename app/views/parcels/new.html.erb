@@ -1,9 +1,14 @@
-<div class="index">  
+<div class="newparcel">
+		<div class="index">
 
-	<h1>Nouvelle Parcelle</h1>
+		<h1>Nouvelle Parcelle</h1>
+		<br>
+		<div class="text-center form-signin">
 
-	<%= render 'form', parcel: @parcel %>
 
-	<%= link_to 'Retour', parcels_path %>
+		<%= render 'form', parcel: @parcel %>
 
+		<%= link_to 'Retour', parcels_path, class: 'btn btn-outline-primary' %>
+		</div>
+	</div>
 </div>

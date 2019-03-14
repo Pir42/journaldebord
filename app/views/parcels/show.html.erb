@@ -1,21 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<div class="index">
-  <p>
-    <p class="font-weight-bold mt-3 h5">ID du lieu</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @parcel.idPlace %>
-  </p>
+<div class="showparcel">
+  <div class="index">
+    <p>
+      <h1>ID du lieu</h1>
+      <br>
+      <p class="bd-callout bd-callout-primary p-3 shadow-sm form-signin"><%= @parcel.idPlace %>
+    </p>
 
-  <p>
-    <p class="font-weight-bold mt-3 h5">Nom :</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @parcel.name %>
-  </p>
+    <p>
+      <h1>Nom</h1>
+      <br>
+      <p class="bd-callout bd-callout-primary p-3 shadow-sm form-signin"><%= @parcel.name %>
+    </p>
 
-  <div class="mt-4">
-    <% if can? :update, @variety%>
-    <%= link_to 'Modifier', edit_parcel_path(@parcel), class: 'btn btn-outline-secondary mb-4' %> |
-    <% end %>
-    <br>
-    <%= link_to 'Retour', parcels_path %>
+    <div class="mt-4 text-center">
+
+      <%= link_to 'Modifier', edit_parcel_path(@parcel), class: 'btn btn-outline-primary' %>
+
+      <br>
+      <%= link_to 'Retour', parcels_path, class: 'btn btn-primary' %>
+    </div>
   </div>
 </div>

@@ -1,15 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<div class="index">
-  <p>
-    <p class="font-weight-bold mt-3 h5">Nom :</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @vegetable.name %></p>
-  </p>
+<div class="showvege ">
+    <div class="index">
+    <p>
+      <h1>Fiche légume</h1>
+      <br>
+      <p class="bd-callout bd-callout-primary p-3 shadow-sm form-signin"><%= @vegetable.name %></p>
+    </p>
 
-  <div class="mt-4">
-    <%= link_to 'Modifier', edit_vegetable_path(@vegetable), class: 'btn btn-outline-secondary mb-4' %>
-    <br>
-    <%= link_to 'Retour', vegetables_path %>
+    <div class="mt-4 text-center">
+      <%= link_to 'Modifier', edit_vegetable_path(@vegetable), class: 'btn btn-outline-primary' %>
+      <br>
+      <%= link_to 'Retour', vegetables_path, class: 'btn btn-primary' %>
+    </div>
+
   </div>
-
 </div>

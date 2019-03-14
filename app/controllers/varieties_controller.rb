@@ -1,7 +1,7 @@
 class VarietiesController < ApplicationController
   before_action :set_variety, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-
+  add_breadcrumb "Mes variétés", :varieties_path
 
   # GET /varieties
   # GET /varieties.json
@@ -12,15 +12,18 @@ class VarietiesController < ApplicationController
   # GET /varieties/1
   # GET /varieties/1.json
   def show
+    add_breadcrumb "Voir mes variétés"
   end
 
   # GET /varieties/new
   def new
     @variety = Variety.new
+    add_breadcrumb "Ajouter une variété"
   end
 
   # GET /varieties/1/edit
   def edit
+    add_breadcrumb "Modifier mes variétés"
   end
 
   # POST /varieties

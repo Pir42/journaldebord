@@ -14,12 +14,29 @@
 }
 
 .newvege {
+  text-transform: uppercase;
   h1 {
-    text-transform: uppercase;
     font-size: 32px;
   }
   .btn-primary {
-    margin-bottom: 27px;
     text-transform: uppercase;
+  }
+}
+
+.editvege {
+  .btn-primary {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}
+
+.showvege {
+  text-transform: uppercase;
+  .btn-outline-primary {
+    margin-bottom: 20px;
+  }
+  .btn-primary {
+    padding-left: 19px;
+    padding-right: 19px;
   }
 }
