@@ -2,25 +2,67 @@
 
 <div class="index">
 
-  <h2>Filtres</h2>
+  <div class="modal fade" tabindex="-1" role="dialog" id="modalfilters" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+       <div class="modal-body">
+          
+          <div class="container-fluid">
+            <%= form_tag("/fertilizations", method: "get") do %>
+            
+            <div class="row">
+              <h2>FILTRER LES RECHERCHES</h2>
+            </div>  
 
-    <%= form_tag(fertilizations_path, method: "get") do %>
-      <%= label_tag("Date de début :") %><br>
-      <%= date_field_tag(:from) %><br>
+            <div class="row">
 
-      <%= label_tag("Date de fin :") %><br>
-      <%= date_field_tag(:to) %><br>
+              <div class="col">
+                <%= label_tag("Date de début :") %><br>
+                <%= date_field_tag(:from) %><br>
+                
+                <%= label_tag("Date de fin :") %><br>
+                <%= date_field_tag(:to) %><br>
+              </div>
 
-      <%= label_tag("Engrais :") %><br>
-      <%= collection_select(:fertilizer, :id, Fertilizer.where(user: current_user), :id, :name, :include_blank => true) %><br>
+              <div class="col">
+                <%= label_tag("Engrais :") %><br>
+                <%= collection_select(:fertilizer, :id, Fertilizer.where(user: current_user), :id, :name, :include_blank => true) %>
+              </div>
 
-      <%= submit_tag("Search") %><br>
-      <button type="button" id="Init">
-        <%= link_to "Réinitialiser", fertilizations_path %>
-      </button>
-    <% end %>
+              <div class="col">
+                <%= label_tag("Parcelle :") %><br>
+                <%= collection_select(:parcel, :id, Parcel.where(user: current_user), :id, :name, :include_blank => true) %>
+              </div>
+
+            </div>
+
+            <div class="row justify-content-end">
+                <br>
+                <%= submit_tag("Rechercher") %><br>
+                <button type="button" id="Init">
+                  <%= link_to "Effacer les filtres", fertilizations_path %>
+                </button>
+                <% end %>
+
+                <button type="button" data-dismiss="modal">Fermer</button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <h1>Suivi de la fertilisation</h1>
+
+  <div class='container'>
+    <%= link_to 'Ajouter un suivi', new_fertilization_path, class: 'btn btn-primary'  %>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalfilters">Filtres</button>
+  </div>  
+
 
   <table class="table table-stripped table-hover table-responsive">
     <thead>
@@ -47,9 +89,5 @@
       <% end %>
     </tbody>
   </table>
-
-  <br>
-
-<%= link_to 'Ajouter un suivi', new_fertilization_path, class: 'btn btn-primary'  %>
 
 </div>

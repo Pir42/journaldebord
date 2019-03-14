@@ -29,6 +29,13 @@ class TreatmentsController < ApplicationController
       end
     end
 
+    if params[:parcel] != nil
+      if params[:parcel][:id] != ''
+        @events = @events.where("parcel_id = :parcelid", 
+          {parcelid: params[:parcel][:id]})
+      end
+    end
+
   end
 
   # GET /treatments/1

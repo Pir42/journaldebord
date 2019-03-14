@@ -2,7 +2,7 @@
 
 <div class="index">
 
-  <button type="button" class="btn-primary" data-toggle="modal" data-target="#modalfilters">Filtres</button>
+  
 
   
 
@@ -29,7 +29,8 @@
               </div>
 
               <div class="col">
-              - Par parcelle -
+                <%= label_tag("Parcelle :") %><br>
+                <%= collection_select(:parcel, :id, Parcel.where(user: current_user), :id, :name, :include_blank => true) %>
               </div>
 
               <div class="col"> 
@@ -43,7 +44,7 @@
               </div>
             </div>
 
-            <div class="row">
+            <div class="row justify-content-end">
                 <br>
                 <%= submit_tag("Rechercher") %><br>
                 <button type="button" id="Init">
@@ -71,8 +72,12 @@
   
   <br>
 
-  <%= link_to 'Ajouter un suivi', new_event_path, class: 'btn btn-primary', id:"button_addsuivi" %>
+  <div class='container'>
+    <%= link_to 'Ajouter un suivi', new_event_path, class: 'btn btn-primary', id:"button_addsuivi" %>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalfilters">Filtres</button>
+  </div>  
 
+  
   <table class="table table-stripped table-hover table-responsive">
     <thead>
       <tr>
