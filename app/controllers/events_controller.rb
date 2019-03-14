@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.where(user: current_user)
+    @events = Event.where(user: current_user).page(params[:page]).per(12)
 
     if (params[:from] != '' && params[:to] != '') && (params[:from] != nil && params[:to] != nil)
       @events = @events.where("date >= :start_date AND date <= :end_date",
