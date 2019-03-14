@@ -1,6 +1,19 @@
 
-<div class=container>
-    <h1>Dashboard</h1>
+<div class="container mt-5">
+    <h1>Mes derniers suivis</h1>
+    <hr>
+    <div class="dropdown mt-4 mb-4">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Ajouter un suivi
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <%= link_to "Cultures", new_event_path, class: "dropdown-item"%>
+        <%= link_to "Fertilisation", new_fertilization_path, class: "dropdown-item"%>
+        <%= link_to "Traitements", new_treatment_path, class: "dropdown-item"%>
+    </div>
+    </div>
+
     <div class="row">
     <% @follows.each do |follow| %>
         <div class="col-4">
@@ -8,7 +21,6 @@
             <% if follow.is_a?(Event) %>
                 <div class="card-header bg-success text-white">
                     <span>Culture</span>
-                    <%= link_to "Voir plus", follow, class: "btn btn-primary"%>
                 </div>
                 <div class="card-body">
                     <p>Date : <%= follow.date %><p>
@@ -17,22 +29,24 @@
                     <p>Action : <%= ActionType.find(follow.action_type_id).name %></p>
                     <p>Détails : <%= follow.details %></p>
                     <p>Quantité : <%= follow.quantity%> <%= follow.unit %></p>
+                    <hr>
+                    <%= link_to "Voir plus", follow, class: "btn btn-primary"%>
                 </div>
             <% elsif follow.is_a?(Fertilization) %>
                 <div class="card-header bg-info text-white">
                     <span>Fertilisation</span>
-                    <%= link_to "Voir plus", follow, class: "btn btn-primary"%>
                 </div>
                 <div class="card-body">
                     <p>Date : <%= follow.date %><p>
                     <p>Engrais : <%= Fertilizer.find(follow.fertilizer_id).name %></p>
                     <p>Quantité : <%= follow.quantity %></p>
                     <p>Parcelle : <%= Parcel.find(follow.parcel_id).idPlace %></p>
+                    <hr>
+                    <%= link_to "Voir plus", follow, class: "btn btn-primary"%>
                 </div>
             <% elsif follow.is_a?(Treatment) %>
                 <div class="card-header bg-secondary text-white">
                     <span>Traitement</span>
-                    <%= link_to "Voir plus", follow, class: "btn btn-primary"%>
                 </div>
                 <div class="card-body">
                     <p>Date : <%= follow.date %><p>
@@ -40,6 +54,8 @@
                     <p>Détails : <%= follow.details %></p>
                     <p>Quantité : <%= follow.quantity %> <%= follow.unit %></p>
                     <p>Parcelle : <%= follow.parcel.idPlace %></p>
+                    <hr>
+                    <%= link_to "Voir plus", follow, class: "btn btn-primary"%>
                 </div>
             <% end %>
             </div>

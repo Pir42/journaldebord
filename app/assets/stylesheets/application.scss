@@ -139,3 +139,19 @@ table tr:nth-child(odd){
 #tableau-head{
 	background-color:white;
 }
+header {
+	margin-bottom: 5em;
+}
+header .logoimg {
+	background: white;
+	border-radius: 50%;
+	width: 6em;
+	height: 6em;
+	margin-bottom: -6em;
+	img {
+		display: block;
+		margin: auto;
+		margin-top: 1.2em;
+		width: 60%;
+	}
+}

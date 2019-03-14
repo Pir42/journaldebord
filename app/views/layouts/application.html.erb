@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="icon" href="/images/m_logo.png"/>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
@@ -15,14 +16,15 @@
 
     <% if user_signed_in? %>
     <header class="navbar navbar-expand-lg navbar-light" id="background">
-      <%= link_to root_path do %>
+
+    
       <div id="navbar-contener">
+        <div class="logoimg navbar-brand">
+          <%= image_tag  "/images/Logo.svg" %>
+        </div>
+      <%= link_to root_path do %>
         <p class='navbar-brand' id="h1">journal de bord</p>
       <% end  %>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item dropdown">
