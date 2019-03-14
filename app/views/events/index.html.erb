@@ -4,6 +4,7 @@
 
   <h2>Filtres</h2>
 
+  <div class="filters">
     <%= form_tag("/", method: "get") do %>
       <%= label_tag("Date de début :") %><br>
       <%= date_field_tag(:from) %><br>
@@ -22,6 +23,7 @@
         <%= link_to "Init", events_path %>
       </button>
     <% end %>
+  </div>
 
 
   <h1>MES DERNIERES ACTIONS</h1>

@@ -1,6 +1,6 @@
 class TreatmentsController < ApplicationController
   before_action :set_treatment, only: [:show, :edit, :update, :destroy]
-  add_breadcrumb "Suivis des traitements", :root_path
+  add_breadcrumb "Suivis des traitements", :treatments_path
 
   # GET /treatments
   # GET /treatments.json

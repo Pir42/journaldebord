@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   load_and_authorize_resource
-  add_breadcrumb "Suivis de mes cultures", :root_path
+  add_breadcrumb "Suivis de mes cultures", :events_path
+
   # GET /events
   # GET /events.json
   def index
@@ -35,6 +36,7 @@ class EventsController < ApplicationController
           {actionid: params[:action_type][:id]})
       end
     end
+
 
   end
 

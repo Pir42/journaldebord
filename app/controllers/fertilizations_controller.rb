@@ -1,7 +1,7 @@
 class FertilizationsController < ApplicationController
   before_action :set_fertilization, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-  add_breadcrumb "Suivis de la fertilisation", :root_path
+  add_breadcrumb "Suivis de la fertilisation", :fertilizations_path
 
   # GET /fertilizations
   # GET /fertilizations.json
