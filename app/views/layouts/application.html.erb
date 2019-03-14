@@ -15,9 +15,9 @@
 
     <% if user_signed_in? %>
     <header class="navbar navbar-expand-lg navbar-light" id="background">
-      <%= link_to events_path do %>
+      <%= link_to root_path do %>
       <div id="navbar-contener">
-        <p class='navbar-brand' id="h1">JOURNAL DE BORD</p>
+        <p class='navbar-brand' id="h1">journal de bord</p>
       <% end  %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
                   <li class="nav-item dropdown">
 
                     <p class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      MES SUIVIS
+                      mes suivis
 
                     </p>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -42,7 +42,7 @@
 
                   <li class="nav-item dropdown">
                     <p class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      MON JARDIN
+                      mon jardin
                     </p>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <p class="dropdown-item"><%= link_to 'Mes légumes',vegetables_path, class: 'nav-link' %></p>
@@ -58,7 +58,7 @@
                   </li>
                 </ul>
                 <p class="nav-link" href="#" id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
-                      <%= link_to 'ANNUAIRE', directories_path, class: 'nav-link' %>
+                      <%= link_to 'annuaire', directories_path, class: 'nav-link' %>
                 </p>
 
                 <ul class="nav navbar-nav flex-row justify-content-md-end flex-nowrap">
@@ -80,8 +80,9 @@
     <% end %>
     </header>
     
-    <%= render_breadcrumbs :separator => ' / ' %>
-
+    <div class="breadcrumb">
+    <p>Vous êtes ici > <%= render_breadcrumbs :separator => ' > ' %></p>
+    </div>
     <%= yield %>
 
 
