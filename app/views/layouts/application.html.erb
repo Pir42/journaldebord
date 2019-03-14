@@ -79,10 +79,12 @@
 
     <% end %>
     </header>
-    
+
+    <% if user_signed_in? %>
     <div class="breadcrumb" id="breadcrumbs">
     <p>Vous êtes ici > <%= render_breadcrumbs :separator => ' > ' %></p>
     </div>
+    <% end %>
     <%= yield %>
 
 
