@@ -1,0 +1,30 @@
+<h1>Dashboard</h1>
+
+<% @follows.each do |follow| %>
+    <div>
+        <% if follow.is_a?(Event) %>
+            <span>Culture</span>
+            <span><%= follow.date %></span>
+            <span><%= Variety.find(follow.variety_id).name %></span>
+            <span><%= Parcel.find(follow.parcel_id).idPlace %></span>
+            <span><%= ActionType.find(follow.action_type_id).name %></span>
+            <span><%= follow.details %></span>
+            <span><%= follow.quantity%></span>
+            <span><%= follow.unit %></span>
+        <% elsif follow.is_a?(Fertilization) %>
+            <span>Fertilisation</span>
+            <span><%= follow.date %></span>
+            <span><%= Fertilizer.find(follow.fertilizer_id).name %></span>
+            <span><%= follow.quantity %></span>
+            <span><%= Parcel.find(follow.parcel_id).idPlace %></span>
+        <% elsif follow.is_a?(Treatment) %>
+            <span>Traitements</span>
+            <span><%= follow.date %></span>
+            <span><%= follow.variety.name %></span>
+            <span><%= follow.details %></span>
+            <span><%= follow.quantity %></span>
+            <span><%= follow.unit %></span>
+            <span><%= follow.parcel.idPlace %></span>
+        <% end %>
+    </div>
+<% end %>

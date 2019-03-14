@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :directories
+  get 'dashboard/index'
   resources :treatments
   resources :fertilizations
   resources :fertilizers
@@ -11,6 +12,6 @@ Rails.application.routes.draw do
   resources :events
   devise_for :users
 
-  root to: 'events#index'
+  root to: 'dashboard#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
