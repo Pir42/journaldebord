@@ -67,6 +67,7 @@ h1{
 
 #button_addsuivi{
 	margin-bottom: 1.5em;
+	margin-top: 1.5em;
 }
 
 #breadcrumbs{
@@ -74,4 +75,62 @@ h1{
 	padding-right: 50px;
     margin-top: 1%;
     margin-left: 16%;
+}
+
+.pagination{
+
+	margin-top: 1%;
+	margin-bottom: 5%;
+
+	.page {
+		border-color:grey;
+		border-style: solid;
+  		border-width: 1px;
+  		padding: 8px;
+	}
+
+	.page.current{
+		border-color:grey;
+		border-style: solid;
+  		border-width: 1px;
+  		padding: 8px;
+	}
+
+	.next {
+		border-color: grey;
+		border-style: solid;
+  		border-width: 1px;
+  		border-radius: 0 5px 5px 0;
+  		padding: 8px;
+	}
+
+	.last {
+
+		a{
+			display:none;
+		}
+	}
+
+	.first {
+
+		a{
+			display:none;
+		}
+	}
+
+	.prev {
+		border-color: grey;
+		border-style: solid;
+  		border-width: 1px;
+  		border-radius: 5px 0 0 5px;
+  		padding: 8px;
+	}
+}
+
+table tr:nth-child(odd){
+  background-color:rgba(0, 0, 0, 0.05);
+}
+
+#tableau-head{
+	background-color:white;
 }

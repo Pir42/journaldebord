@@ -68,19 +68,15 @@
 
   <h1>mes dernieres actions</h1>
 
-  <%= paginate @events %>
-  
-  <br>
-
-  <div class='container'>
-    <%= link_to 'Ajouter un suivi', new_event_path, class: 'btn btn-primary', id:"button_addsuivi" %>
+  <div class='container' id="button_addsuivi">
+    <%= link_to 'Ajouter un suivi', new_event_path, class: 'btn btn-primary' %>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalfilters">Filtres</button>
   </div>  
 
   
-  <table class="table table-stripped table-hover table-responsive">
+  <table class="table table-stripped table-hover table-responsive border-bottom">
     <thead>
-      <tr>
+      <tr id="tableau-head">
         <th scope="col">Date</th>
         <th scope="col">Variété</th>
         <th scope="col">Parcelle</th>
@@ -109,6 +105,9 @@
       <% end %>
     </tbody>
   </table>
+  <div>
+   <%= paginate @events %>
+  </div>
 </div>
 
 
