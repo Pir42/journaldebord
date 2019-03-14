@@ -4,32 +4,24 @@
 
 <h1>Variétés</h1>
 
-<table class="table table-stripped table-hover table-responsive">
-  <thead>
-    <tr>
-      <th scope="col">Nom</th>
-      <th scope="col">Légume</th>
-      <th scope="col" colspan="3"></th>
-    </tr>
-  </thead>
+<%= link_to 'Nouvelle Variété', new_variety_path, class: 'btn btn-primary mt-5 mb-5' %>
 
-  <tbody>
+    <div class="row">
     <% @varieties.each do |variety| %>
-      <tr>
-
-        <td><%= variety.name %></td>
-        <td><%= variety.vegetable.name %></td>
-        <td><%= link_to 'Voir', variety %></td>
-        <td><%= link_to 'Modifier', edit_variety_path(variety) %></td>
-        <% if Event.where(variety_id: variety.id).empty? %>
-        <td><%= link_to 'Supprimer', variety, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger'%></td>
-        <% end %>
-      </tr>
+      <div class="col-sm-4 mb-3">
+        <div class="card">
+          <div class="card-header">
+            <%= variety.name %>
+          </div>
+          <div class="card-header">
+          <%= link_to 'Voir la fiche', variety, class: "btn btn-outline-primary center-text" %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+    </div>
+
 
 <br>
 
-<%= link_to 'Nouvelle Variété', new_variety_path, class: 'btn btn-primary' %>
 </div>
