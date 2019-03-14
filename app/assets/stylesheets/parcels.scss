@@ -1,3 +1,13 @@
 // Place all the styles related to the Parcels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.indexparcel {
+  h1 {
+    text-transform: uppercase;
+    font-size: 32px;
+  }
+  .btn-primary {
+    margin-bottom: 27px;
+  }
+}

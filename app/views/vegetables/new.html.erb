@@ -1,7 +1,9 @@
-<div class="index">
-    <h1>Ajouter un légume</h1>
+<div class="newvege">
+    <div class="index">
+      <h1>Ajouter un légume</h1>
 
-    <%= render 'form', vegetable: @vegetable %>
+      <%= render 'form', vegetable: @vegetable %>
 
-    <%= link_to 'Retour', vegetables_path %>
+      <%= link_to 'Annuler', vegetables_path, class: 'btn btn-outline-secondary'%>
+  </div>
 </div>

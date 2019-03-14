@@ -1,31 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<div class="index">
-  <h1>Mes légumes</h1>
+<div class="indexvege">
+  <div class="index">
+    <h1>Mes légumes</h1>
 
-  <table class="table table-stripped table-hover table-responsive"">
-    <thead>
-      <tr>
-        <th scope="col">Nom</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @vegetables.each do |vegetable| %>
+    <table class="table table-stripped table-hover table-responsive"">
+      <br>
+      <%= link_to 'Ajouter', new_vegetable_path, class: 'btn btn-primary' %>
+      <br>
+      <thead>
         <tr>
-          <td><%= vegetable.name %></td>
-          <td><%= link_to 'Voir', vegetable %></td>
-          <td><%= link_to 'Modifier', edit_vegetable_path(vegetable) %></td>
-          <% if Vegetable.where(id: vegetable.id).empty? %>
-          <td><%= link_to 'Supprimer', vegetable, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger' %></td>
-          <% end %>
+          <th scope="col">Nom</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <br>
+      <tbody>
+        <% @vegetables.each do |vegetable| %>
+          <tr>
+            <td><%= vegetable.name %></td>
+            <td><%= link_to 'Voir', vegetable %></td>
+            <td><%= link_to 'Modifier', edit_vegetable_path(vegetable) %></td>
+            <% if Vegetable.where(id: vegetable.id).empty? %>
+            <td><%= link_to 'Supprimer', vegetable, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger' %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <%= link_to 'Ajouter un légume', new_vegetable_path, class: 'btn btn-primary' %>
+
+  </div>
 </div>
