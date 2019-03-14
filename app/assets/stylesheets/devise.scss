@@ -1,53 +1,42 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab');
+.homepage {
+  .background1 {
+    background: url('/images/illuaccueil2.png') no-repeat center fixed;
+    background-size: cover;
+    height: 100vh;
 
-$font-roboto : 'Roboto Slab';
-$Montserrat : 'Montserrat';
+    a {
+      display: block;
+      padding-top: 650px;
+    }
+    h1{
+      font-size: 57px;
+    }
 
-.background1 {
-  background: url('/images/illuaccueil.svg') no-repeat center fixed;
-  background-size: cover;
-  height: 100vh;
-  a {
-    display: block;
-    padding-top: 650px;
+  }
+  .fa-angle-double-down {
+    font-size: 100px;
+  }
+
+  .container{
+    height: 83vh;
+    margin-top: 170px;
+  }
+
+  .dot {
+    height: 7px;
+    width: 7px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
   }
 }
 
-
-h1{
-  font-size: 57px;
-}
-
-.dot {
-  height: 7px;
-  width: 7px;
-  background-color: black;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.container{
-  height: 83vh;
-  margin-top: 170px;
-}
-
-#accueil {
-  font-family: $font-roboto;
-}
 
 .form-signin {
     width: 100%;
     max-width: 526px;
     padding: 15px;
     margin: auto;
-}
-
-#cobutton {
-  border-radius: 40px;
-}
-
-.btn-warning{
-  border-radius: 40px;
 }
 
 .links {

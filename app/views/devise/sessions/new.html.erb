@@ -1,53 +1,57 @@
-  <header class="background1">
-    <a href="#loginform" class="text-center"> scroll down</a>
-  </header>
+<div class="homepage">
+    <header class="background1">
+      <a href="#loginform" class="text-center">
+        <i class="fas fa-angle-double-down"></i>
+      </a>
+    </header>
 
-  <div class="container" id="loginform">
-    <div class="align-middle" id="accueil">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'text-center'}) do |f| %>
-
-
-      <h1 class="text-center">JOURNAL DE BORD</h1>
-      <br />
-      <br />
-        <p>Gérez votre exploitation</p>
-        <span class="dot"></span>
-        <p>Ajoutez, modifiez, consultez vos suivis de culture</p>
-      <br />
-      <br />
+    <div class="container" id="loginform">
+      <div class="align-middle" id="accueil">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'text-center'}) do |f| %>
 
 
-      <div id="accueil" class="form-signin">
-        <div>
-          <%= f.label :email, class: 'sr-only' %><br />
-          <%= f.email_field :email, autocomplete: "email", placeholder: 'Saisissez votre email', class: 'form-control' %>
+        <h1 class="text-center">JOURNAL DE BORD</h1>
+        <br />
+        <br />
+          <p>Gérez votre exploitation</p>
+          <span class="dot"></span>
+          <p>Ajoutez, modifiez, consultez vos suivis de culture</p>
+        <br />
+        <br />
+
+
+        <div id="accueil" class="form-signin">
+          <div>
+            <%= f.label :email, class: 'sr-only' %><br />
+            <%= f.email_field :email, autocomplete: "email", placeholder: 'Saisissez votre email', class: 'form-control' %>
+          </div>
+
+          <div>
+            <%= f.label :password, class: 'sr-only' %>
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Saisissez votre mot de passe', class: 'form-control' %>
+          </div>
+
+
+        <% if devise_mapping.rememberable? %>
+
+          <div class="field checkbox mb3">
+
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me, value: 'Se souvenir de moi' %>
+
+          </div>
+
+        <% end %>
+
+        <div class="actions text-center" >
+          <%= f.submit "Connexion", class: 'btn btn-primary', id: 'cobutton' %>
         </div>
 
-        <div>
-          <%= f.label :password, class: 'sr-only' %>
-          <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Saisissez votre mot de passe', class: 'form-control' %>
+        <div class="links text-center">
+          <%= render "devise/shared/links" %>
         </div>
-
-
-      <% if devise_mapping.rememberable? %>
-
-        <div class="field checkbox mb3">
-
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, value: 'Se souvenir de moi' %>
-
-        </div>
-
+      </div>
       <% end %>
-
-      <div class="actions text-center" >
-        <%= f.submit "Connexion", class: 'btn btn-success', id: 'cobutton' %>
-      </div>
-
-      <div class="links text-center">
-        <%= render "devise/shared/links" %>
       </div>
     </div>
-    <% end %>
-    </div>
-  </div>
+</div>
