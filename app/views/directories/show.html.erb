@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<div class='container'>
+
+    <p>
+      <strong>Nom de famille :</strong>
+      <%= @directory.last_name %>
+    </p>
+
+    <p>
+      <strong>Prénom :</strong>
+      <%= @directory.first_name %>
+    </p>
+
+    <p>
+      <strong>Téléphone:</strong>
+      <%= @directory.phone %>
+    </p>
+
+    <p>
+      <strong>Adresse :</strong>
+      <%= @directory.address %>
+    </p>
+
+    <p>
+      <strong>Code postal :</strong>
+      <%= @directory.postcode %>
+    </p>
+
+    <p>
+      <strong>Ville :</strong>
+      <%= @directory.city %>
+    </p>
+
+    <p>
+      <strong>Contrat :</strong>
+      <%= @directory.contract %>
+    </p>
+
+    <p>
+      <strong>Commentaires :</strong>
+      <%= @directory.comment %>
+    </p>
+
+<%= link_to 'Modifier', edit_directory_path(@directory) %> |
+<%= link_to 'Retour', directories_path %>
+
+</div>
