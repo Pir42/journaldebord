@@ -2,27 +2,33 @@
 
 <div class="index">
 
-  <h2>Filtres</h2>
+  <button type="button" class="btn-primary" data-toggle="modal" data-target="#modalfilters">Filtres</button>
 
-  <div class="filters">
-    <%= form_tag("/", method: "get") do %>
-      <%= label_tag("Date de début :") %><br>
-      <%= date_field_tag(:from) %><br>
+  <div class="filters modal fade" tabindex="1" role="dialog" id="modalfilters">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <%= form_tag("/", method: "get") do %>
+          <%= label_tag("Date de début :") %><br>
+          <%= date_field_tag(:from) %><br>
 
-      <%= label_tag("Date de fin :") %><br>
-      <%= date_field_tag(:to) %><br>
+          <%= label_tag("Date de fin :") %><br>
+          <%= date_field_tag(:to) %><br>
 
-      <%= label_tag("Variété :") %><br>
-      <%= collection_select(:variety, :id, Variety.where(user: current_user), :id, :name, :include_blank => true) %><br>
+          <%= label_tag("Variété :") %><br>
+          <%= collection_select(:variety, :id, Variety.where(user: current_user), :id, :name, :include_blank => true) %><br>
 
-      <%= label_tag("Action:") %><br>
-      <%= collection_select(:action_type, :id, ActionType.where(user: current_user), :id, :name, :include_blank => true) %><br>
+          <%= label_tag("Action:") %><br>
+          <%= collection_select(:action_type, :id, ActionType.where(user: current_user), :id, :name, :include_blank => true) %><br>
 
-      <%= submit_tag("Search") %><br>
-      <button type="button" id="Init">
-        <%= link_to "Init", events_path %>
-      </button>
-    <% end %>
+          <%= submit_tag("Search") %><br>
+          <button type="button" id="Init">
+            <%= link_to "Init", events_path %>
+          </button>
+        <% end %>
+
+        <button type="button" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
   </div>
 
 
@@ -64,4 +70,5 @@
     </tbody>
   </table>
 </div>
+
 
