@@ -1,11 +1,11 @@
+<div class="editvege">
+  <div class="index">
 
-<div class="index">
+      <h1>Modifier un légume</h1>
 
-    <h1>Modifier un légume</h1>
-
-    <%= render 'form', vegetable: @vegetable %>
-
-    <%= link_to 'Voir', @vegetable %> |
-    <%= link_to 'Retour', vegetables_path %>
-
+      <div class="form-signin text-center">
+        <%= render 'form', vegetable: @vegetable %>
+        <%= link_to 'Retour', vegetables_path, class: 'btn btn-primary' %>
+      </div>
+  </div>
 </div>

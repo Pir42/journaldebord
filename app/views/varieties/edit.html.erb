@@ -1,10 +1,11 @@
-<div class="index">
+<div class="editvari">
+    <div class="index">
 
-    <h1>Modifier une variété</h1>
+      <h1>Modifier une variété</h1>
+    <div class="text-center form-signin">
+        <%= render 'form', variety: @variety %>
 
-    <%= render 'form', variety: @variety %>
-
-    <%= link_to 'Voir', @variety %> |
-    <%= link_to 'Retour', varieties_path %>
-
+      <%= link_to 'Retour', varieties_path, class: 'btn btn-outline-primary'%>
+    </div>
+  </div>
 </div>

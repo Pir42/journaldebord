@@ -1,3 +1,28 @@
 // Place all the styles related to the Varieties controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.newvari {
+  text-transform: uppercase;
+  .btn-primary{
+    text-transform: uppercase;
+  }
+  .btn-outline-primary {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}
+
+.showvari {
+  text-transform: uppercase;
+  .btn-primary {
+    margin-top: 17px;
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}
+
+.editvari {
+  text-transform: uppercase;
+}

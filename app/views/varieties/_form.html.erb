@@ -23,14 +23,14 @@
     </div>
       <% else %>
     <div>
-      <%= link_to 'Ajouter un légume', new_vegetable_path, class: 'btn btn-primary' %>
+      <%= link_to 'Ajouter', new_vegetable_path, class: 'btn btn-primary' %>
       <% end %>
   </div>
   <div>
     <% if Vegetable.where(user: current_user) != [] %>
     <div class="actions mb-3">
       <% if current_page? new_variety_path %>
-        <%= form.submit 'Ajouter une variété', class: 'btn btn-primary' %>
+        <%= form.submit 'Ajouter', class: 'btn btn-primary' %>
       <% else %>
         <%= form.submit 'Modifier', class: 'btn btn-primary' %>
       <% end %>

@@ -1,21 +1,24 @@
 <p id="notice"><%= notice %></p>
+<div class="showvari">
+    <div class="index">
+    <p>
+      <h1>Nom</h1>
+      <br>
+      <p class="bd-callout bd-callout-primary p-3 shadow-sm form-signin"><%= @variety.name %></p>
+    </p>
 
-<div class="index">
-  <p>
-    <p class="font-weight-bold mt-3 h5">Nom :</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @variety.name %></p>
-  </p>
+    <p>
+      <h1>Légume</h1>
+      <br>
+      <p class="bd-callout bd-callout-primary p-3 shadow-sm form-signin"><%= @variety.vegetable.name %></p>
+    </p>
 
-  <p>
-    <p class="font-weight-bold mt-3 h5">Légume :</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @variety.vegetable.name %></p>
-  </p>
+    <div class="mt-4 text-center">
 
-  <div class="mt-4">
+      <%= link_to 'Modifier', edit_variety_path(@variety), class: 'btn btn-outline-primary' %>
 
-    <%= link_to 'Modifier', edit_variety_path(@variety), class: 'btn btn-outline-secondary mb-4' %>
-
-    <br>
-    <%= link_to 'Retour', varieties_path %>
+      <br>
+      <%= link_to 'Retour', varieties_path, class: 'btn btn-primary' %>
+    </div>
   </div>
 </div>

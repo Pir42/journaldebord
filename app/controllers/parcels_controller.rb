@@ -1,7 +1,7 @@
 class ParcelsController < ApplicationController
   before_action :set_parcel, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-
+  add_breadcrumb "Mes parcelles", :parcels_path
   # GET /parcels
   # GET /parcels.json
   def index
@@ -11,15 +11,18 @@ class ParcelsController < ApplicationController
   # GET /parcels/1
   # GET /parcels/1.json
   def show
+    add_breadcrumb "Voir mes parcelles"
   end
 
   # GET /parcels/new
   def new
     @parcel = Parcel.new
+    add_breadcrumb "Ajouter une parcelle"
   end
 
   # GET /parcels/1/edit
   def edit
+    add_breadcrumb "Modifier mes parcelles"
   end
 
   # POST /parcels
