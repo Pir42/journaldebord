@@ -8,38 +8,39 @@
             <% if follow.is_a?(Event) %>
                 <div class="card-header bg-success text-white">
                     <span>Culture</span>
+                    <%= link_to "Voir plus", follow, class: "btn btn-primary"%>
                 </div>
                 <div class="card-body">
-                    <span><%= follow.date %></span>
-                    <span><%= Variety.find(follow.variety_id).name %></span>
-                    <span><%= Parcel.find(follow.parcel_id).idPlace %></span>
-                    <span><%= ActionType.find(follow.action_type_id).name %></span>
-                    <span><%= follow.details %></span>
-                    <span><%= follow.quantity%></span>
-                    <span><%= follow.unit %></span>
+                    <p>Date : <%= follow.date %><p>
+                    <p>Variété : <%= Variety.find(follow.variety_id).name %></p>
+                    <p>Parcelle : <%= Parcel.find(follow.parcel_id).idPlace %></p>
+                    <p>Action : <%= ActionType.find(follow.action_type_id).name %></p>
+                    <p>Détails : <%= follow.details %></p>
+                    <p>Quantité : <%= follow.quantity%> <%= follow.unit %></p>
                 </div>
             <% elsif follow.is_a?(Fertilization) %>
                 <div class="card-header bg-info text-white">
                     <span>Fertilisation</span>
+                    <%= link_to "Voir plus", follow, class: "btn btn-primary"%>
                 </div>
                 <div class="card-body">
-                    <span><%= follow.date %></span>
-                    <span><%= Fertilizer.find(follow.fertilizer_id).name %></span>
-                    <span><%= follow.quantity %></span>
-                    <span><%= Parcel.find(follow.parcel_id).idPlace %></span>
+                    <p>Date : <%= follow.date %><p>
+                    <p>Engrais : <%= Fertilizer.find(follow.fertilizer_id).name %></p>
+                    <p>Quantité : <%= follow.quantity %></p>
+                    <p>Parcelle : <%= Parcel.find(follow.parcel_id).idPlace %></p>
                 </div>
             <% elsif follow.is_a?(Treatment) %>
                 <div class="card-header bg-secondary text-white">
                     <span>Traitement</span>
+                    <%= link_to "Voir plus", follow, class: "btn btn-primary"%>
                 </div>
                 <div class="card-body">
-                    <span><%= follow.date %></span>
-                    <span><%= follow.variety.name %></span>
-                    <span><%= follow.details %></span>
-                    <span><%= follow.quantity %></span>
-                    <span><%= follow.unit %></span>
-                    <span><%= follow.parcel.idPlace %></span>
-                <div>
+                    <p>Date : <%= follow.date %><p>
+                    <p>Variété : <%= follow.variety.name %></p>
+                    <p>Détails : <%= follow.details %></p>
+                    <p>Quantité : <%= follow.quantity %> <%= follow.unit %></p>
+                    <p>Parcelle : <%= follow.parcel.idPlace %></p>
+                </div>
             <% end %>
             </div>
         </div>
