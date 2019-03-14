@@ -43,18 +43,18 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    add_breadcrumb 'Consulter un suivi', event_path
+    add_breadcrumb 'Consulter un suivi'
   end
 
   # GET /events/new
   def new
     @event = Event.new
-    add_breadcrumb 'Ajouter un suivi', new_event_path
+    add_breadcrumb 'Ajouter un suivi'
   end
 
   # GET /events/1/edit
   def edit
-    add_breadcrumb 'Modifier un suivi', edit_event_path
+    add_breadcrumb 'Modifier un suivi'
   end
 
   # POST /events

@@ -1,6 +1,7 @@
 class VegetablesController < ApplicationController
   before_action :set_vegetable, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
+  add_breadcrumb "Mes légumes", :vegetables_path
 
   # GET /vegetables
   # GET /vegetables.json
@@ -11,16 +12,18 @@ class VegetablesController < ApplicationController
   # GET /vegetables/1
   # GET /vegetables/1.json
   def show
+    add_breadcrumb "Voir un légume"
   end
 
   # GET /vegetables/new
   def new
     @vegetable = Vegetable.new
+    add_breadcrumb "Ajouter un légume"
   end
 
   # GET /vegetables/1/edit
   def edit
-    
+    add_breadcrumb "Modifier un légume"
   end
 
   # POST /vegetables

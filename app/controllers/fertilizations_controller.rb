@@ -35,18 +35,18 @@ class FertilizationsController < ApplicationController
   # GET /fertilizations/1
   # GET /fertilizations/1.json
   def show
-    add_breadcrumb 'Consulter un suivi', fertilization_path
+    add_breadcrumb 'Consulter un suivi'
   end
 
   # GET /fertilizations/new
   def new
     @fertilization = Fertilization.new
-    add_breadcrumb 'Ajouter un suivi', new_fertilization_path
+    add_breadcrumb 'Ajouter un suivi'
   end
 
   # GET /fertilizations/1/edit
   def edit
-    add_breadcrumb 'Modifier un suivi', edit_fertilization_path
+    add_breadcrumb 'Modifier un suivi'
   end
 
   # POST /fertilizations
