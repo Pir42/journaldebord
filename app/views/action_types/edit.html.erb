@@ -1,10 +1,30 @@
-<div class="index">
+<p id="notice"><%= notice %></p>
 
-	<h1>Editer mes actions</h1>
+<div class="indexShowPage">
 
-	<%= render 'form', action_type: @action_type %>
+  <h1 class="mt-5">Modifier mes actions</h1>
 
-	<%= link_to 'Show', @action_type %> |
-	<%= link_to 'Back', action_types_path %>
+  <hr>
 
-</div>	
+  <div class="container w-50 mt-5">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <p class="p-3 ">
+          <%= render 'form', action_type: @action_type %>
+        </p>
+      </div>
+		</div>
+		<div class="row justify-content-center mt-5">
+      <div class="col-4 text-center">
+        <%= link_to 'Retour', action_types_path, class: "btn btn-primary pl-4 pr-4" %>
+      </div>
+      <% if Event.where(action_type_id: @action_type).empty? %>
+      <div class="col-4 text-center">
+      <%= link_to 'Supprimer', @action_type, method: :delete, data: { confirm: 'Êtes-vous sûrs ?' }, class: "btn btn-outline-danger pl-4 pr-4" %>
+      </div>
+      <% else %>
+
+      <% end %>
+    </div>
+	</div>
+</div>

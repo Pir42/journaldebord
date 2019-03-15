@@ -18,6 +18,20 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :supplier, value: 'Fournisseur' %>
+      <%= form.text_field :supplier, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :details, value: 'Détails' %>
+      <%= form.text_area :details, class: 'form-control' %>
+    </div>
+  </div>
+
   <div class="actions mb-3">
       <% if current_page? new_vegetable_path%>
         <%= form.submit 'Ajouter', class: 'btn btn-primary' %>

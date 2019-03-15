@@ -36,8 +36,9 @@
       </div>
       <div class="col-12 mb-3">
         <p class="p-3 border border-secondary mb-4 rounded">
-          Détails: 
-          <p><%= @fertilizer.details %></p>
+          Détails:
+          <br>
+          <%= @fertilizer.details %>
         </p>
       </div>
     </div>
@@ -48,6 +49,13 @@
       <div class="col-4 text-center">
         <%= link_to 'Retour', fertilizers_path, class: "btn btn-primary pl-4 pr-4" %>
       </div>
+      <% if Fertilization.where(fertilizer_id: @fertilizer.id).empty? %>
+      <div class="col-4 text-center">
+      <%= link_to 'Supprimer', @fertilizer, method: :delete, data: { confirm: 'Êtes-vous sûrs ?' }, class: "btn btn-outline-danger pl-4 pr-4" %>
+      </div>
+      <% else %>
+
+      <% end %>
     </div>
 
     </div>

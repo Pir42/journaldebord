@@ -1,17 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<div class="showvege ">
-    <div class="index">
-    <p>
-      <h1>Fiche légume</h1>
-      <br>
-      <p class="bd-callout bd-callout-primary p-3 shadow-sm form-signin"><%= @vegetable.name %></p>
-    </p>
+<div class="indexShowPage">
 
-    <div class="mt-4 text-center">
-      <%= link_to 'Modifier', edit_vegetable_path(@vegetable), class: 'btn btn-outline-primary' %>
-      <br>
-      <%= link_to 'Retour', vegetables_path, class: 'btn btn-primary' %>
+  <h1 class="mt-5">Fiche Légume</h1>
+
+  <hr>
+
+  <div class="container w-50 mt-5">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          Légume : <%= @vegetable.name %>
+        </p>
+      </div>
+      <div class="row justify-content-center mt-5">
+        <div class="col-4 text-center">
+          <%= link_to 'Modifier', edit_vegetable_path(@vegetable), class: "btn btn-outline-primary pl-4 pr-4" %>
+        </div>
+        <div class="col-4 text-center">
+          <%= link_to 'Retour', vegetables_path, class: "btn btn-primary pl-4 pr-4" %>
+        </div>
+        <% if Variety.where(vegetable_id: @vegetable.id).empty? %>
+        <div class="col-4 text-center">
+        <%= link_to 'Supprimer', @vegetable, method: :delete, data: { confirm: 'Êtes-vous sûrs ?' }, class: "btn btn-outline-danger pl-4 pr-4" %>
+        </div>
+        <% else %>
+
+        <% end %>
+      </div>
     </div>
 
   </div>

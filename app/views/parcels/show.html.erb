@@ -26,6 +26,13 @@
       <div class="col-4 text-center">
         <%= link_to 'Retour', parcels_path, class: "btn btn-primary pl-4 pr-4" %>
       </div>
+      <% if Event.where(parcel_id: @parcel.id).empty? && Treatment.where(parcel_id: @parcel.id).empty? && Fertilization.where(parcel_id: @parcel.id).empty? %>
+      <div class="col-4 text-center">
+      <%= link_to 'Supprimer', @parcel, method: :delete, data: { confirm: 'Êtes-vous sûrs ?' }, class: "btn btn-outline-danger pl-4 pr-4" %>
+      </div>
+      <% else %>
+
+      <% end %>
     </div>
   </div>
 </div>
