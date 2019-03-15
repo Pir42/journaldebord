@@ -106,7 +106,7 @@
           <td><%= Parcel.find(fertilization.parcel_id).idPlace %></td>
           <td><%= link_to 'Voir', fertilization %></td>
           <td><%= link_to 'Modifier', edit_fertilization_path(fertilization) %></td>
-          <td><%= link_to 'Supprimer', fertilization, method: :delete, data: { confirm: 'êtes-vous sûr' } %></td>
+          <td><%= link_to 'Supprimer', fertilization, method: :delete, data: { confirm: 'êtes-vous sûr ?' }, class: 'text-danger' %></td>
         </tr>
       <% end %>
     </tbody>

@@ -109,7 +109,7 @@
         <td><%= treatment.parcel.idPlace %></td>
         <td><%= link_to 'Voir', treatment %></td>
         <td><%= link_to 'Modifier', edit_treatment_path(treatment) %></td>
-        <td><%= link_to 'Supprimer', treatment, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %></td>
+        <td><%= link_to 'Supprimer', treatment, method: :delete, data: { confirm: 'Êtes-vous sûr ?' }, class: 'text-danger' %></td>
       </tr>
     <% end %>
   </tbody>
