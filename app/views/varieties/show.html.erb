@@ -1,24 +1,32 @@
 <p id="notice"><%= notice %></p>
-<div class="showvari">
-    <div class="index">
-    <p>
-      <h1>Nom</h1>
-      <br>
-      <p class="bd-callout bd-callout-primary p-3 shadow-sm form-signin"><%= @variety.name %></p>
-    </p>
 
-    <p>
-      <h1>Légume</h1>
-      <br>
-      <p class="bd-callout bd-callout-primary p-3 shadow-sm form-signin"><%= @variety.vegetable.name %></p>
-    </p>
+<div class="indexShowPage">
 
-    <div class="mt-4 text-center">
+  <h1 class="mt-5">Fiche Variété</h1>
 
-      <%= link_to 'Modifier', edit_variety_path(@variety), class: 'btn btn-outline-primary' %>
+  <hr>
 
-      <br>
-      <%= link_to 'Retour', varieties_path, class: 'btn btn-primary' %>
+  <div class="container w-50 mt-5">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          Variété : <%= @variety.name %>
+        </p>
+      </div>
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          Légume : <%= @variety.vegetable.name %>
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-4 text-center">
+        <%= link_to 'Modifier', edit_variety_path(@variety), class: "btn btn-outline-primary pl-4 pr-4" %>
+      </div>
+      <div class="col-4 text-center">
+        <%= link_to 'Retour', varieties_path, class: "btn btn-primary pl-4 pr-4" %>
+      </div>
     </div>
   </div>
+
 </div>

@@ -17,10 +17,17 @@
       <%= form.label :name, value: 'Nom' %>
       <%= form.text_field :name, class: 'form-control' %>
     </div>
+  </div>
+
+  <div class="form-group">
     <div class="field">
       <%= form.label :vegetable_id, value: 'Légume' %>
       <%= form.collection_select(:vegetable_id, Vegetable.where(user: current_user), :id, :name, {class: "form-control"}) %>
     </div>
+  </div>
+
+
+
       <% else %>
     <div>
       <%= link_to 'Ajouter', new_vegetable_path, class: 'btn btn-primary' %>
@@ -28,10 +35,10 @@
   </div>
   <div>
     <% if Vegetable.where(user: current_user) != [] %>
-    <div class="actions mb-3">
+    <div class="actions">
       <% if current_page? new_variety_path %>
         <%= form.submit 'Ajouter', class: 'btn btn-primary' %>
-      <% else %>
+        <% else %>
         <%= form.submit 'Modifier', class: 'btn btn-primary' %>
       <% end %>
     </div>
