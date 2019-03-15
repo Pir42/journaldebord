@@ -15,7 +15,7 @@
     </div>
 
     <div class="row">
-    <% @follows.each do |follow| %>
+    <% @follows.reverse_each do |follow| %>
         <div class="col-4">
             <div class="card mb-4">
             <% if follow.is_a?(Event) %>
@@ -23,7 +23,7 @@
                     <span>Culture</span>
                 </div>
                 <div class="card-body">
-                    <p>Date : <%= follow.date %><p>
+                    <p>Date : <%= l(follow.date, format: "%e %B %Y") %><p>
                     <p>Variété : <%= Variety.find(follow.variety_id).name %></p>
                     <p>Parcelle : <%= Parcel.find(follow.parcel_id).idPlace %></p>
                     <p>Action : <%= ActionType.find(follow.action_type_id).name %></p>
@@ -37,7 +37,7 @@
                     <span>Fertilisation</span>
                 </div>
                 <div class="card-body">
-                    <p>Date : <%= follow.date %><p>
+                    <p>Date : <%= l(follow.date, format: "%e %B %Y") %><p>
                     <p>Engrais : <%= Fertilizer.find(follow.fertilizer_id).name %></p>
                     <p>Quantité : <%= follow.quantity %></p>
                     <p>Parcelle : <%= Parcel.find(follow.parcel_id).idPlace %></p>
@@ -49,7 +49,7 @@
                     <span>Traitement</span>
                 </div>
                 <div class="card-body">
-                    <p>Date : <%= follow.date %><p>
+                    <p>Date : <%= l(follow.date, format: "%e %B %Y") %><p>
                     <p>Variété : <%= follow.variety.name %></p>
                     <p>Détails : <%= follow.details %></p>
                     <p>Quantité : <%= follow.quantity %> <%= follow.unit %></p>

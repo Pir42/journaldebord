@@ -126,9 +126,9 @@
     </thead>
 
     <tbody>
-      <% @events.each do |event| %>
+      <% @events.reverse_each do |event| %>
         <tr>
-          <th scope="row"><%= event.date %></th>
+          <th scope="row"><%= event.date.strftime("%d/%m/%y") %></th>
           <td><%= Variety.find(event.variety_id).name %></td>
           <td><%= Parcel.find(event.parcel_id).idPlace %></td>
           <td><%= ActionType.find(event.action_type_id).name %></td>

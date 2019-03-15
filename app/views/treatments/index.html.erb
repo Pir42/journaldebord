@@ -99,9 +99,9 @@
   </thead>
 
   <tbody>
-    <% @treatments.each do |treatment| %>
+    <% @treatments.reverse_each do |treatment| %>
       <tr>
-        <td><%= treatment.date %></td>
+        <td><%= treatment.date.strftime("%d/%m/%y") %></td>
         <td><%= treatment.variety.name %></td>
         <td><%= treatment.details %></td>
         <td><%= treatment.quantity %></td>

@@ -44,7 +44,6 @@ fr:
       long: "%e %B %Y"
       short: "%e %b"
     month_names:
-    - 
     - janvier
     - février
     - mars

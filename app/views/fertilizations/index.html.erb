@@ -98,9 +98,9 @@
     </thead>
 
     <tbody>
-      <% @fertilizations.each do |fertilization| %>
+      <% @fertilizations.reverse_each do |fertilization| %>
         <tr>
-          <td><%= fertilization.date %></td>
+          <td><%= fertilization.date.strftime("%d/%m/%y") %></td>
           <td><%= Fertilizer.find(fertilization.fertilizer_id).name %></td>
           <td><%= fertilization.quantity %></td>
           <td><%= Parcel.find(fertilization.parcel_id).idPlace %></td>
