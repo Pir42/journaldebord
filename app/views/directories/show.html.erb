@@ -2,47 +2,59 @@
 
 <div class='container'>
 
-    <p>
-      <strong>Nom de famille :</strong>
-      <%= @directory.last_name %>
-    </p>
+<h1>Fiche Contact</h1>
 
-    <p>
-      <strong>Prénom :</strong>
-      <%= @directory.first_name %>
-    </p>
+<div class="row mt-5">
+  <div class="col-4">
+  <div class="p-3 border border-secondary mb-4 rounded text-uppercase">
+    <%= @directory.last_name %>
+    </div>
+  </div>
+  <div class="col-4">
+  <div class="p-3 border border-secondary mb-4 rounded">
+    <%= @directory.first_name %>
+    </div>
+  </div>
+  <div class="col-4">
+  <div class="p-3 border border-secondary mb-4 rounded">
+    <%= @directory.phone %>
+    </div>
+  </div>
+  <div class="col-4">
+  <div class="p-3 border border-secondary mb-4 rounded">
+    <%= @directory.address %>
+    </div>
+  </div>
+  <div class="col-4">
+  <div class="p-3 border border-secondary mb-4 rounded">
+    <%= @directory.city %>
+    </div>
+  </div>
+  <div class="col-4">
+  <div class="p-3 border border-secondary mb-4 rounded">
+    <%= @directory.postcode %>
+    </div>
+  </div>
 
-    <p>
-      <strong>Téléphone:</strong>
-      <%= @directory.phone %>
-    </p>
+  <div class="col-4">
+  <div class="p-3 border border-secondary mb-4 rounded">
+    <%= @directory.contract %>
+    </div>
+  </div>
+  <div class="col-8">
+  <div class="p-3 border border-secondary mb-4 rounded">
+    <%= @directory.comment %>
+    </div>
+  </div>
+</div>
 
-    <p>
-      <strong>Adresse :</strong>
-      <%= @directory.address %>
-    </p>
-
-    <p>
-      <strong>Code postal :</strong>
-      <%= @directory.postcode %>
-    </p>
-
-    <p>
-      <strong>Ville :</strong>
-      <%= @directory.city %>
-    </p>
-
-    <p>
-      <strong>Contrat :</strong>
-      <%= @directory.contract %>
-    </p>
-
-    <p>
-      <strong>Commentaires :</strong>
-      <%= @directory.comment %>
-    </p>
-
-<%= link_to 'Modifier', edit_directory_path(@directory) %> |
-<%= link_to 'Retour', directories_path %>
+<div class="row justify-content-center mt-5">
+  <div class="col-2 text-center">
+    <%= link_to 'Modifier', edit_directory_path(@directory), class: "btn btn-outline-primary pl-4 pr-4" %>
+  </div>
+  <div class="col-2 text-center">
+    <%= link_to 'Retour', directories_path, class: "btn btn-primary pl-4 pr-4" %>
+  </div>
+</div>
 
 </div>

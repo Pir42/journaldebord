@@ -5,7 +5,7 @@ class TreatmentsController < ApplicationController
   # GET /treatments
   # GET /treatments.json
   def index
-    @treatments = Treatment.where(user: current_user)
+    @treatments = Treatment.where(user: current_user).page(params[:page]).per(12)
 
     if (params[:from] != '' && params[:to] != '') && (params[:from] != nil && params[:to] != nil)
       @treatments = @treatments.where("date >= :start_date AND date <= :end_date",

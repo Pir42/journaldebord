@@ -28,11 +28,6 @@ body {
   font-family: $font-roboto;
 }
 
-#body{
-	background: url('/images/illu jardin op100.png') no-repeat center fixed;
-	background-size:cover;
-}
-
 p {
     margin: 0;
 }
@@ -73,6 +68,8 @@ h1{
 #button_addsuivi{
 	margin-bottom: 1.5em;
 	margin-top: 1.5em;
+	padding-left: 0;
+	margin-left: 0;
 }
 
 #breadcrumbs{
@@ -154,4 +151,12 @@ header .logoimg {
 		margin-top: 1.2em;
 		width: 60%;
 	}
+}
+
+#table{
+	display: table;
+}
+
+#button_filtre{
+	margin-left: 5%;
 }
