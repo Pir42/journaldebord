@@ -1,25 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<div class="showparcel">
-  <div class="index">
-    <p>
-      <h1>ID du lieu</h1>
-      <br>
-      <p class="bd-callout bd-callout-primary p-3 shadow-sm form-signin"><%= @parcel.idPlace %>
-    </p>
+<div class="indexShowPage">
 
-    <p>
-      <h1>Nom</h1>
-      <br>
-      <p class="bd-callout bd-callout-primary p-3 shadow-sm form-signin"><%= @parcel.name %>
-    </p>
+  <h1 class="mt-5">Fiche Parcelle</h1>
 
-    <div class="mt-4 text-center">
+  <hr>
 
-      <%= link_to 'Modifier', edit_parcel_path(@parcel), class: 'btn btn-outline-primary' %>
+  <div class="container w-50 mt-5">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          ID de la parcelle : <%= @parcel.idPlace %>
+        </p>
+      </div>
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          Nom de la parcelle : <%= @parcel.name %>
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-4 text-center">
+        <%= link_to 'Modifier', edit_parcel_path(@parcel), class: "btn btn-outline-primary pl-4 pr-4" %>
+      </div>
+      <div class="col-4 text-center">
+        <%= link_to 'Retour', parcels_path, class: "btn btn-primary pl-4 pr-4" %>
+      </div>
+    </div>
 
-      <br>
-      <%= link_to 'Retour', parcels_path, class: 'btn btn-primary' %>
     </div>
   </div>
+
 </div>
