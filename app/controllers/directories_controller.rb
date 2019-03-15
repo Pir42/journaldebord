@@ -1,5 +1,7 @@
 class DirectoriesController < ApplicationController
   before_action :set_directory, only: [:show, :edit, :update, :destroy]
+  add_breadcrumb 'Annuaire', :directories_path
+
 
   # GET /directories
   # GET /directories.json
@@ -10,15 +12,18 @@ class DirectoriesController < ApplicationController
   # GET /directories/1
   # GET /directories/1.json
   def show
+    add_breadcrumb 'Fiche contact'
   end
 
   # GET /directories/new
   def new
+    add_breadcrumb 'Ajouter un contact'
     @directory = Directory.new
   end
 
   # GET /directories/1/edit
   def edit
+    add_breadcrumb 'Modifier un contact'
   end
 
   # POST /directories

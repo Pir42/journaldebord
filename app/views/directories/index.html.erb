@@ -4,42 +4,22 @@
 
 <h1>ANNUAIRE</h1>
 
-<br>
+<%= link_to 'Ajouter un contact', new_directory_path, class: 'btn btn-primary mt-5 mb-5' %>
 
-<%= link_to 'Nouveau contact', new_directory_path, class: 'btn btn-primary' %>
-
-<table class="table table-stripped table-hover table-responsive">
-  <thead>
-    <tr>
-      <th scope="col">Nom de famille</th>
-      <th scope="col">Prénom</th>
-      <th scope="col">Téléphone</th>
-      <th scope="col">Adresse</th>
-      <th scope="col">Code postal</th>
-      <th scope="col">Ville</th>
-      <th scope="col">Contrat</th>
-      <th scope="col">Commentaire</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @directories.each do |directory| %>
-      <tr>
-        <td scope="row"><%= directory.last_name %></td>
-        <td><%= directory.first_name %></td>
-        <td><%= directory.phone %></td>
-        <td><%= directory.address %></td>
-        <td><%= directory.postcode %></td>
-        <td><%= directory.city %></td>
-        <td><%= directory.contract %></td>
-        <td><%= directory.comment %></td>
-        <td><%= link_to 'Voir', directory %></td>
-        <td><%= link_to 'Modifier', edit_directory_path(directory) %></td>
-        <td><%= link_to 'Supprimer', directory, method: :delete, data: { confirm: 'Etes-vous sûr ?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="row">
+  <% @directories.each do |contact| %>
+    <div class="col-sm-3 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <%= contact.first_name %>
+          <%= contact.last_name %> 
+        </div>
+        <div class="card-header">
+        <%= link_to 'Voir le contact', contact, class: "btn btn-outline-primary center-text" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
 
 </div>
