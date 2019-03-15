@@ -31,7 +31,10 @@ body {
 p {
     margin: 0;
 }
-
+.space {
+	display: block;
+	margin-top: 8em;
+}
 #background{
 	background-color:#DCEDF6;
 	padding: 1rem 1rem;
@@ -164,4 +167,8 @@ header .logoimg {
 #container{
 	margin-left:0;
 	padding-left: 0;
+}
+.indexShowPage {
+	max-width: 50%;
+	margin: auto;
 }

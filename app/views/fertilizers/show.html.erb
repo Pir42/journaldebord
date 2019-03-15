@@ -1,43 +1,56 @@
 <p id="notice"><%= notice %></p>
 
-<div class="index">
+<div class="indexShowPage">
 
-  <p>
-    <p class="font-weight-bold mt-3 h5">Nom:</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.name %>
-  </p>
+  <h1 class="mt-5">Fiche Engrais</h1>
 
-  <p>
-    <p class="font-weight-bold mt-3 h5">Azote:</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.nitrogen %>
-  </p>
+  <hr>
 
-  <p>
-    <p class="font-weight-bold mt-3 h5">Phosphore:</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.phosphorus %>
-  </p>
+  <div class="container w-50 mt-5">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          Engrais : <%= @fertilizer.name %>
+        </p>
+      </div>
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          Teneur en N : <%= @fertilizer.nitrogen %>
+        </p>
+      </div>
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          Teneur en P : <%= @fertilizer.potassium %>
+        </p>
+      </div>
 
-  <p>
-    <p class="font-weight-bold mt-3 h5">Potassium:</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.potassium %>
-  </p>
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          Teneur en K : <%= @fertilizer.phosphorus %>
+        </p>
+      </div>
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          Fournisseur : <%= @fertilizer.supplier %>
+        </p>
+      </div>
+      <div class="col-12 mb-3">
+        <p class="p-3 border border-secondary mb-4 rounded">
+          Détails: 
+          <p><%= @fertilizer.details %></p>
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-4 text-center">
+        <%= link_to 'Modifier', edit_fertilizer_path(@fertilizer), class: "btn btn-outline-primary pl-4 pr-4" %>
+      </div>
+      <div class="col-4 text-center">
+        <%= link_to 'Retour', fertilizers_path, class: "btn btn-primary pl-4 pr-4" %>
+      </div>
+    </div>
 
-
-  <p>
-    <p class="font-weight-bold mt-3 h5">Fournisseur:</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.supplier %>
-  </p>
-
-  <p>
-    <p class="font-weight-bold mt-3 h5">Details:</p>
-    <p class="bd-callout bd-callout-primary p-3 shadow-sm"><%= @fertilizer.details %>
-  </p>
-
-<div class="mt-4">
-    <% if can? :update, @variety%>
-    <%= link_to 'Modifier', edit_fertilizer_path(@fertilizer), class: 'btn btn-outline-secondary mb-4' %> |
-    <% end %>
-    <br>
-    <%= link_to 'Retour', fertilizers_path %>
+    </div>
   </div>
+
 </div>
