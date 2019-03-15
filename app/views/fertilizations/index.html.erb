@@ -86,7 +86,7 @@
   </div>  
 
 
-  <table class="table table-stripped table-hover table-responsive border-bottom">
+  <table class="table table-stripped table-hover table-responsive border-bottom" id="table">
     <thead>
       <tr id="tableau-head">
         <th scope="col">Date</th>
@@ -111,5 +111,7 @@
       <% end %>
     </tbody>
   </table>
-
+  <div>
+   <%= paginate @fertilizations %>
+  </div>
 </div>

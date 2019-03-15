@@ -6,7 +6,7 @@ class FertilizationsController < ApplicationController
   # GET /fertilizations
   # GET /fertilizations.json
   def index
-    @fertilizations = Fertilization.where(user: current_user)
+    @fertilizations = Fertilization.where(user: current_user).page(params[:page]).per(12)
 
     if (params[:from] != '' && params[:to] != '') && (params[:from] != nil && params[:to] != nil)
       @fertilizations = @fertilizations.where("date >= :start_date AND date <= :end_date",
