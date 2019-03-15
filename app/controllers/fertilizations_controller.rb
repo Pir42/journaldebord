@@ -22,25 +22,17 @@ class FertilizationsController < ApplicationController
     end
 
     if params[:fertilizer] != nil
-      params[:fertilizer][:id].each do |id|
-        if id != ''
-          @fertilizations.each do |event|
+        if params[:fertilizer][:id] != ''
             @fertilizations = @fertilizations.where("fertilizer_id = :fertilizerid", 
-              {fertilizerid: id.to_i})
-          end
-        end
+              {fertilizerid:  params[:fertilizer][:id]})
       end
     end
 
     if params[:parcel] != nil
-      params[:parcel][:id].each do |id|
-        if id != ''
-          @fertilizations.each do |event|
+        if params[:parcel][:id] != ''
             @fertilizations = @fertilizations.where("parcel_id = :parcelid", 
-              {parcelid: id.to_i})
-          end
+              {parcelid: params[:parcel][:id]})
         end
-      end
     end
 
   end

@@ -24,48 +24,34 @@ class EventsController < ApplicationController
     end
 
     if params[:variety] != nil
-      params[:variety][:id].each do |id|
-        if id != ''
-          @events.each do |event|
-            @events.where("variety_id = :varietyid", 
-            {varietyid: id.to_i})
-          end 
+        if params[:variety][:id] != ""
+            @events = @events.where("variety_id = :varietyid", 
+            {varietyid: params[:variety][:id]})
         end
-      end
     end
 
     if params[:vegetable] != nil
-      params[:vegetable][:id].each do |id|
-        if id != ''
-          @events.each do |event|
-            @events.where("vegetable_id = :vegetableid", 
-            {vegetableid: id.to_i})
-          end 
+        if params[:vegetable][:id] != ""
+            @events = @events.where("vegetable_id = :vegetableid", 
+            {vegetableid: params[:vegetable][:id]})
         end
-      end
     end
 
     if params[:action_type] != nil
-      params[:action_type][:id].each do |id|
-        if id != ''
-          @events.each do |event|
+        if params[:action_type][:id] != ""
             @events = @events.where("action_type_id = :actionid", 
-              {actionid: id.to_i})
-          end
+              {actionid: params[:action_type][:id]})
         end
-      end
     end
 
     if params[:parcel] != nil
-      params[:parcel][:id].each do |id|
-        if id != ''
-          @events.each do |event|
+        if params[:parcel][:id] != ''
             @events = @events.where("parcel_id = :parcelid", 
-              {parcelid: id.to_i})
-          end
+              {parcelid: params[:parcel][:id]})
         end
-      end
     end
+
+ 
 
 
   end

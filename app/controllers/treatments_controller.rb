@@ -21,25 +21,17 @@ class TreatmentsController < ApplicationController
     end
 
     if params[:variety] != nil
-      params[:variety][:id].each do |id|
-        if id != ''
-          @treatments.each do |event|
-            @treatments.where("variety_id = :varietyid", 
-            {varietyid: id.to_i})
-          end 
+        if params[:variety][:id] != ""
+            @treatments = @treatments.where("variety_id = :varietyid", 
+            {varietyid: params[:variety][:id]})
         end
-      end
     end
 
     if params[:parcel] != nil
-      params[:parcel][:id].each do |id|
-        if id != ''
-          @treatments.each do |event|
+        if params[:parcel][:id] != ''
             @treatments = @treatments.where("parcel_id = :parcelid", 
-              {parcelid: id.to_i})
-          end
+              {parcelid: params[:parcel][:id]})
         end
-      end
     end
 
   end
