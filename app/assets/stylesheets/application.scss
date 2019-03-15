@@ -68,8 +68,8 @@ h1{
 #button_addsuivi{
 	margin-bottom: 1.5em;
 	margin-top: 1.5em;
-	padding-left: 0;
 	margin-left: 0;
+	padding-left:0;
 }
 
 #breadcrumbs{
@@ -159,4 +159,9 @@ header .logoimg {
 
 #button_filtre{
 	margin-left: 5%;
+}
+
+#container{
+	margin-left:0;
+	padding-left: 0;
 }
