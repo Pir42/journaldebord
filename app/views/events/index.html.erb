@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
-<div id="body">
-<div class="index">
 
+<div class="index">
 
   <div class="modal fade" tabindex="-1" role="dialog" id="modalfilters" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -27,55 +26,116 @@
 
               <div class="col">
                 <%= label_tag("Parcelle :") %><br>
-                <%= collection_select(:parcel, :id, Parcel.where(user: current_user), :id, :name, :include_blank => true) %>
+                <div class="row">
+                  <%= collection_check_boxes(:parcel, :id, Parcel.where(user: current_user), :id, :name) do |b| %>
+                    <div class="col-4">
+                      <%= b.label(class:"label-checkbox") { b.check_box + b.text } %> 
+                    </div>
+                  <% end %>                  
+                </div>
+              </div>
+
+              <div class="col"> 
+                <%= label_tag("Légume :") %><br>
+                <div class="row">
+                  <%= collection_check_boxes(:vegetable, :id, Vegetable.where(user: current_user), :id, :name) do |b| %>
+                    <div class="col-4">
+                      <%= b.label(class:"label-checkbox") { b.check_box + b.text } %> 
+                    </div>
+                  <% end %>                  
+                </div>   
               </div>
 
               <div class="col">
                 <%= label_tag("Variété :") %><br>
-                <%= collection_select(:variety, :id, Variety.where(user: current_user), :id, :name, :include_blank => true) %>
+                <div class="row">
+                  <%= collection_check_boxes(:variety, :id, Variety.where(user: current_user), :id, :name) do |b| %>
+                    <div class="col-4">
+                      <%= b.label(class:"label-checkbox") { b.check_box + b.text } %> 
+                    </div>
+                  <% end %>                  
+                </div>   
               </div>
+
 
               <div class="col">
                 <%= label_tag("Action:") %><br>
-                <%= collection_select(:action_type, :id, ActionType.where(user: current_user), :id, :name, :include_blank => true) %><br>
+                <div class="row">
+                  <%= collection_check_boxes(:action_type, :id, ActionType.where(user: current_user), :id, :name) do |b| %>
+                    <div class="col-4">
+                      <%= b.label(class:"label-checkbox") { b.check_box + b.text } %> 
+                    </div>
+                  <% end %>                  
+                </div>
               </div>
             </div>
 
-            <div class="row justify-content-end">
-                <br>
-                <%= submit_tag("Rechercher") %><br>
-                <button type="button" id="Init">
-                  <%= link_to "Effacer les filtres", events_path %>
-                </button>
-                <% end %>
+            <div class="row text-right">
+              <div class="col">
+                
+                <div class="actions">
+                  <%= submit_tag "Rechercher" , :class => "btn btn-success" %><br>
+                </div>  
+                
+                <div class="actions">
+                  <button type="button" class='btn btn-outline-secondary' id="Init">
+                    <%= link_to "Effacer les filtres", events_path %> 
+                  </button>
+                  <% end %>
+                </div>  
 
-                <button type="button" data-dismiss="modal">Fermer</button>
+                <div class="actions">
+                  <button type="button" class='btn btn-outline-danger' data-dismiss="modal">Fermer</button>
+                </div>
+
+              </div>    
             </div>
-
+          
           </div>
 
-          </div>
-        </div>
       </div>
     </div>
+<<<<<<< Updated upstream
 
 
 
+=======
+  </div>
+</div>
+
+        
+          
+>>>>>>> Stashed changes
 
 
   <h1>mes dernieres actions</h1>
 
+<<<<<<< Updated upstream
 
 
   <div class='container' id="button_addsuivi">
     <%= link_to 'Ajouter un suivi', new_event_path, class: 'btn btn-primary' %>
+=======
+  <%= @events %>
+  <%= @id %> 
+  
+  <br>
+
+  <div class='container'>
+    <%= link_to 'Ajouter un suivi', new_event_path, class: 'btn btn-primary', id:"button_addsuivi" %>
+>>>>>>> Stashed changes
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalfilters">Filtres</button>
   </div>
 
+<<<<<<< Updated upstream
 
   <table class="table table-stripped table-hover border-bottom">
+=======
+  
+  <table class="table table-stripped table-hover table-responsive">
+>>>>>>> Stashed changes
     <thead>
-      <tr id="tableau-head">
+      <tr>
         <th scope="col">Date</th>
         <th scope="col">Variété</th>
         <th scope="col">Parcelle</th>
@@ -99,13 +159,15 @@
           <td><%= event.unit %></td>
           <td><%= link_to 'Voir', event %></td>
           <td><%= link_to 'Modifier', edit_event_path(event) %></td>
-          <td><%= link_to 'Supprimer', event, method: :delete, data: { confirm: 'Etes-vous sûrs ?' }, class: 'text-danger' %></t>
+          <td><%= link_to 'Supprimer', event, method: :delete, data: { confirm: 'Etes-vous sûrs ?' }, class: 'text-danger' %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-  <div>
-   <%= paginate @events %>
-  </div>
 </div>
-</div>
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
