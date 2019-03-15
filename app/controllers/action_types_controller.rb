@@ -1,7 +1,7 @@
 class ActionTypesController < ApplicationController
   before_action :set_action_type, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-
+  add_breadcrumb "Mes actions", :action_types_path
   # GET /action_types
   # GET /action_types.json
   def index
@@ -12,15 +12,18 @@ class ActionTypesController < ApplicationController
   # GET /action_types/1
   # GET /action_types/1.json
   def show
+    add_breadcrumb "Voir mes actions"
   end
 
   # GET /action_types/new
   def new
     @action_type = ActionType.new
+    add_breadcrumb "Nouvelle actions"
   end
 
   # GET /action_types/1/edit
   def edit
+    add_breadcrumb "Modifier mes actions"
   end
 
   # POST /action_types

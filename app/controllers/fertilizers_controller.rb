@@ -1,7 +1,7 @@
 class FertilizersController < ApplicationController
   before_action :set_fertilizer, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-
+  add_breadcrumb "Mes engrais", :fertilizers_path
   # GET /fertilizers
   # GET /fertilizers.json
   def index
@@ -11,15 +11,18 @@ class FertilizersController < ApplicationController
   # GET /fertilizers/1
   # GET /fertilizers/1.json
   def show
+    add_breadcrumb "Voir mes engrais"
   end
 
   # GET /fertilizers/new
   def new
     @fertilizer = Fertilizer.new
+    add_breadcrumb "Nouvel engrais"
   end
 
   # GET /fertilizers/1/edit
   def edit
+    add_breadcrumb "Modifier mes engrais"
   end
 
   # POST /fertilizers

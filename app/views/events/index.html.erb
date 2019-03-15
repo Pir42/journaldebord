@@ -1,26 +1,26 @@
 <p id="notice"><%= notice %></p>
 <div id="body">
 <div class="index">
-  
+
 
   <div class="modal fade" tabindex="-1" role="dialog" id="modalfilters" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
        <div class="modal-body">
-          
+
           <div class="container-fluid">
             <%= form_tag("/events", method: "get") do %>
-            
+
             <div class="row">
               <h2>FILTRER LES RECHERCHES</h2>
-            </div>  
+            </div>
 
             <div class="row">
 
               <div class="col">
                 <%= label_tag("Date de début :") %><br>
                 <%= date_field_tag(:from) %><br>
-                
+
                 <%= label_tag("Date de fin :") %><br>
                 <%= date_field_tag(:to) %><br>
               </div>
@@ -30,7 +30,7 @@
                 <%= collection_select(:parcel, :id, Parcel.where(user: current_user), :id, :name, :include_blank => true) %>
               </div>
 
-              <div class="col"> 
+              <div class="col">
                 <%= label_tag("Variété :") %><br>
                 <%= collection_select(:variety, :id, Variety.where(user: current_user), :id, :name, :include_blank => true) %>
               </div>
@@ -57,21 +57,23 @@
           </div>
         </div>
       </div>
-    </div>        
-          
+    </div>
 
-          
- 
+
+
+
 
   <h1>mes dernieres actions</h1>
+
+
 
   <div class='container' id="button_addsuivi">
     <%= link_to 'Ajouter un suivi', new_event_path, class: 'btn btn-primary' %>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalfilters">Filtres</button>
-  </div>  
+  </div>
 
-  
-  <table class="table table-stripped table-hover table-responsive border-bottom">
+
+  <table class="table table-stripped table-hover border-bottom">
     <thead>
       <tr id="tableau-head">
         <th scope="col">Date</th>
@@ -107,5 +109,3 @@
   </div>
 </div>
 </div>
-
-
