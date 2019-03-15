@@ -4,31 +4,21 @@
 
 <h1>Parcelles</h1>
 
-<table class="table table-stripped table-hover table-responsive">
-  <thead>
-    <tr>
-      <th scope="col">ID du lieu</th>
-      <th scope="col">Nom</th>
-      <th scope="col" colspan="3"></th>
-    </tr>
-  </thead>
+  <%= link_to 'Ajouter une parcelle', new_parcel_path, class: 'btn btn-primary mt-5 mb-5' %>
 
-  <tbody>
-    <% @parcels.each do |parcel| %>
-      <tr>
-        <td><%= parcel.idPlace %></td>
-        <td><%= parcel.name %></td>
-        <td><%= link_to 'Voir', parcel %></td>
-        <td><%= link_to 'Modifier', edit_parcel_path(parcel) %></td>
-        <% if Event.where(parcel_id: parcel.id).empty? %>
-        <td><%= link_to 'Supprimer', parcel, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger' %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="row">
+  <% @parcels.each do |parcel| %>
+    <div class="col-sm-4 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <%= parcel.idPlace %>
+        </div>
+        <div class="card-header">
+        <%= link_to 'Voir la fiche', parcel, class: "btn btn-outline-primary center-text" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
 
-<br>
-
-<%= link_to 'Nouvelle Parcelle', new_parcel_path, class: 'btn btn-primary' %>
 </div>

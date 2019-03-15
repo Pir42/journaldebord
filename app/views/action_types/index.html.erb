@@ -4,29 +4,20 @@
 
 <h1>Type d'action</h1>
 
-<table class="table table-stripped table-hover table-responsive">
-  <thead>
-    <tr>
-      <th scope="col">Nom</th>
-      <th scope="col" colspan="3"></th>
-    </tr>
-  </thead>
+<%= link_to 'Ajouter un type d\'action', new_action_type_path, class: 'btn btn-primary mt-5 mb-5' %>
 
-  <tbody>
-    <% @action_types.each do |action_type| %>
-      <tr>
-        <td><%= action_type.name %></td>
-        <td><%= link_to 'Voir', action_type %></td>
-        <td><%= link_to 'Modifier', edit_action_type_path(action_type) %></td>
-        <% if Event.where(action_type_id: action_type.id).empty? %>
-        <td><%= link_to 'Supprimer', action_type, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'text-danger' %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Nouvelle Action', new_action_type_path, class: 'btn btn-primary' %>
+  <div class="row">
+  <% @action_types.each do |action| %>
+    <div class="col-sm-4 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <%= action.name %>
+        </div>
+        <div class="card-header">
+        <%= link_to 'Modifier', edit_action_type_path(action), class: "btn btn-outline-primary center-text" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
 </div>
